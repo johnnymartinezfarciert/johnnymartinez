@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<style>
+		/* .error class is used for styling the error msg */
+		#dialog {
+			background-color: white;
+			border-style: groove;
+			border-radius: 8px;
+			padding: 12px;
+		}
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script>
+		$(function() {
+
+			$("#dialog").dialog({
+				autoOpen: false,
+				show: {
+					effect: "slide",
+					duration: 500
+				},
+
+				hide: {
+					effect: "drop",
+					duration: 500
+				}
+			});
+
+			$("#opener").click(function() {
+				$("#dialog").dialog("open");
+			});
+		});
+
+		// two-dimensional array with state info
+		var stateArray = [
+			["AL", "ALABAMA", "MONTGOMERY", "4,779,736"],
+			["AK", "ALASKA", "Juneau", "710,231"],
+			["AZ", "ARIZONA", "PHOENIX", "6,392,019"],
+			["AR", "ARKANSAS", "Little Rock", "2,915,918"],
+			["CA", "SACRAMENTO", "37,253,956"],
+			["CO", "COLORADO", "Denver", "5,029,196"]
+		];
+
+		// getInfo function for array search and retreival to input text boxes
+		function getInfo() {
+			var searchKey = document.forms["myForm"].elements["sInput"].value;
+			searchKey = searchKey.toUpperCase(); // change search key to uppercase
+
+			var found = false; // validation flag
+			for (var row = 0; row < stateArray.length; row++) // loop for number of rows in stateArray
+			{
+				if ((stateArray[row][0] == searchKey) || (stateArray[row][1] == searchKey)) {
+					document.forms["myForm"].elements["name"].value = stateArray[row][1];
+					document.forms["myForm"].elements["capital"].value = stateArray[row][2];
+					document.forms["myForm"].elements["population"].value = stateArray[row][3];
+
+					row = stateArray.length; // ends loop if match found
+					found = true;
+				}
+			}
+			if (found == false) {
+				document.forms["myForm"].elements["name"].value = "check state name ";
+			}
+		}
+
+	</script>
+
+
+</head>
+
+<body>
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a hr
+		ef="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Part 2</h2>
+	</div>
+	<div id="partsNav">
+		<ul>
+			<li> <a href="hw5_1a.html"> Part 1a </a> </li>
+			<li> <a href="hw5_1b.html"> Part 1b </a> </li>
+			<li> <a href="hw5_2.html"> Part 2 </a> </li>
+			<li> <a href="hw5_3.html"> Part 3 </a> </li>
+			<li> <a href="hw5_4.html"> Part 4 </a> </li>
+		</ul>
+	</div>
+	<section class="content">
+
+
+		<button id="opener">Click for instructions</button>
+
+		<div id="dialog" title="Instructions">
+			<p>Enter an state abbreviation or name (lower or upper case is ok) in the field next to the
+				State Info button. Available states : AL, AK, AZ, AR, CA, CO </p>
+		</div>
+		<br><br>
+
+		<!-- eneter a state name full or abbreviated and have the state name, capital and population -->
+		<!-- and population appear in seperate form text fields. user should be able to start  -->
+		<!-- the script by pressing the start info button. -->
+		<form id="myForm" name="myForm">
+			<h4> Enter State abbreviation or name </h4>
+			<input type="text" size="15" name="sInput" autofocus>
+			<input type="button" value="Get State Info" onClick="getInfo();" name="search" id="search">
+			<br><br><br>
+			<table>
+				<tr>
+					<th> State Name </th>
+					<th> Capital </th>
+					<th> Population </th>
+				</tr>
+				<tr>
+					<td> <input type="text" id="name" name="name"></td>
+					<td><input type="text" id="capital" name="capital"></td>
+					<td><input type="text" name="population" id="population"></td>
+				</tr>
+			</table>
+
+		</form>
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

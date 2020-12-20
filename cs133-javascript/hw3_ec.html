@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<HTML lang ="en">
+
+<head>
+
+<title> CNIT 133 HomeWork Homepage </title>
+
+<meta charset="utf-8">
+<link rel="Stylesheet" href="Stylesheet.css">
+<script src="hw3Script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+</script>
+
+
+
+
+
+</head>
+
+<body>
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+<div class = "pageheading">
+	<h2> Homework 3 </h2>
+</div>
+
+<section class="content">
+<div id="tabs">
+  <ul>
+  <li><a href="hw3_1.html">Part 1</a></li>
+  <li><a href="hw3_2.html">Part 2</a></li>
+  <li><a href="hw3_3.html">Part 3</a></li>
+  <li><a href="hw3_4.html">Part 4</a></li>
+  <li><a href="hw3_5.html">Part 5 </a></li>
+  <li><a href="hw3_6.html">Part 6 </a></li>
+  <li><a href="hw3_ec.html">Extra Credit </a></li>
+  </ul>
+  <h3>Extra Credit</h3>
+          <div id="ec">
+              <h1>The Game of Craps</h1>
+              <p>A player rolls two dice. Each die has six faces containing 1, 2, 3, 4, 5, and 6 spots, respectively. After the dice have come to rest, the sum of the spots on the two upward faces is calculated. <br /><br />If the sum is 7 or 11 on the first throw, the player wins. If the sum is 2, 3, or 12 on the first throw (called "craps"), the player loses (that is, the "house" wins). <br /><br />If the sum is 4, 5, 6, 8, 9, or 10 on the first throw, that sum becomes the player's "point". To win, you must continue rolling the dice until you "make your point" (that is roll your point value). The player loses by rolling a 7 before making the point. </p>
+              <form name="craps" id="craps">
+                  <div class="buttons">
+                      <input type="button" id="roll" value="Roll the dice" onclick="craps_game()" /><br />
+                      <input type="button" id="newgame" value="New Game" onclick="craps_reset()" />
+                  </div>
+              </form>
+              <table id="rolldata">
+                  <tr class="header">
+                      <td>Die 1</td>
+                      <td>Die 2</td>
+                      <td>Sum</td>
+                      <td>Point</td>
+                      <td>Result</td>
+                  </tr>
+
+              </table>
+  </div>
+</div>
+</section>
+
+<footer>
+	<p>
+	 <script type="text/javascript">
+			var dateModified = document.lastModified;
+			 mydate = dateModified.slice(0,16);
+			 document.write("Last updated: " + mydate);
+	</script>
+	<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+	<a href="https://jigsaw.w3.org/css-validator/check/referer">
+			<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+	</a>
+
+	</p>
+</footer>
+</body>
+
+</html>

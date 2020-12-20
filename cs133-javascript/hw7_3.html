@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<HTML lang ="en">
+
+<head>
+
+<title> CNIT 133 HomeWork Homepage </title>
+
+<meta charset="utf-8">
+<link rel="Stylesheet" href="Stylesheet.css">
+<style>
+nav {
+	margin-left: 70px;
+	margin-bottom: 80px;
+}
+#navigation ul, #navigation li {
+	margin: 0px auto;
+	padding: 0;
+	list-style-type: none;
+}
+#navigation a {
+	background-color: rgb(202,214,424);
+	text-decoration: none;
+	font: 18px Helvetica;
+	text-indent: 25px;
+	border-top: 2px groove #ccc;
+	border-left:2px groove #ccc;
+	border-right:2px groove #999;
+	border-bottom:2px groove #999;
+	margin: 0px;
+	padding: 0px;
+	color: rgb(53,75,118);
+}
+#navigation a:hover {
+	border-top:1px groove #999;
+	border-left:1px groove #999;
+	border-right:1px groove #ccc;
+	border-bottom:1px groove #ccc;
+	background-color: #1b5810;
+	color: white;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script src="nav1.1.min.js"></script>
+
+<script>
+
+$(document).ready(function() {
+ $("#navigation").navPlugin({
+   'itemWidth': 150,
+   'itemHeight': 30,
+   'navEffect': "slide",
+   'speed': 250
+ });
+}); // end ready
+
+</script>
+
+
+</head>
+
+<body>
+<div class="heading">
+	<h1> CNIT 133 </h1> 
+</div>
+
+<nav>
+	<ul id="navigation">
+	<li><a href = "index.html"> Home </a> </li>
+	<li><a href = "hw2_133.html"> Basic Ops</a>
+	<ul>
+		<li>
+			<a href="hw2_1.html"> Part 1 </a>
+		</li>
+		<li>
+			<a href="hw2_2.html"> Part 2 </a>
+		</li>
+		<li>
+			<a href="hw2_3.html"> Part 3 </a>
+		</li>
+		<li>
+			<a href="hw2_4.html"> Part 4 </a>
+		</li>
+		<li>
+			<a href="hw2_ec.html"> Extra Credit </a>
+		</li>
+	</ul>
+	 </li>
+	<li><a href = "hw3_133.html"> Functions</a>
+		<ul>
+			<li><a href="hw3_1.html"> Part 1 </a> </li>
+			<li><a href="hw3_2.html"> Part 2 </a> </li>
+			<li><a href="hw3_3.html"> Part 3 </a> </li>
+			<li><a href="hw3_4.html"> Part 4 </a> </li>
+			<li><a href="hw3_5.html"> Part 5 </a> </li>
+			<li><a href="hw3_6.html"> Part 6 </a> </li>
+		</ul>
+	</li>
+	<li><a href = "hw4_133.html"> Loops</a>
+		<ul>
+			<li><a href="hw4_1.html"> Part 1 </a></li>
+			<li><a href="hw4_2.html"> Part 2 </a></li>
+			<li><a href="hw4_3.html"> Part 3 </a></li>
+			<li><a href="hw4_4.html"> Part 4 </a></li>
+			<li><a href="hw4_5.html"> Part 5 </a></li>
+			<li><a href="hw4_6.html"> Part 6 </a></li>
+			<li><a href="hw4_ec.html"> Extra credit </a></li>
+		</ul>
+	 </li>
+	<li><a href = "hw5_133.html"> Arrays</a>
+	<ul>
+		<li><a href="hw5_1.html"> Part 1 </a> </li>
+		<li><a href="hw5_2.html"> Part 2 </a> </li>
+		<li><a href="hw5_3.html"> Part 3 </a> </li>
+		<li><a href="hw5_4.html"> Part 4 </a> </li>
+	</ul>
+	</li>
+	<li><a href = "hw6_133.html"> Objects</a>
+		<ul>
+			<li><a href="hw6_1.html"> Part 1 </a> </li>
+			<li><a href="hw6_2.html"> Part 2 </a> </li>
+			<li><a href="hw6_3.html"> Part 3 </a> </li>
+			<li><a href="hw6_4.html"> Part 4 </a> </li>
+			<li><a href="hw6_ec.html"> Extra Credit </a> </li>
+		</ul>
+	</li>
+	<li><a href = "hw7_133.html"> jQuery</a> </li>
+	<li><a href = "hw8_133.html"> Ajax</a>
+</ul>
+</nav>
+
+<div class = "pageheading">
+	<h2> Homework 7 - Part 3 </h2>
+</div>
+<div id="partsNav">
+  <ul>
+    <li> <a href="hw7_1.html"> Part 1 </a> </li>
+    <li> <a href="hw7_2.html"> Part 2 </a> </li>
+    <li> <a href="hw7_3.html"> Part 3 </a> </li>
+    <li> <a href="hw7_4.html"> Part 4 </a> </li>
+    <li> <a href="hw7_ec.html"> Extra Credit </a> </li>
+  </ul>
+</div>
+<section class="content">
+
+<div>
+<h3 style="font-family:'comic sans'"> Cool new jQuery powered navigation bar B^) </h3>
+
+</div>
+
+</section>
+
+<footer>
+
+  <p>
+   <script type="text/javascript">
+      var dateModified = document.lastModified;
+       mydate = dateModified.slice(0,17);
+       document.write("Last updated: " + mydate);
+  </script>
+  <a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+  <a href="https://jigsaw.w3.org/css-validator/check/referer">
+      <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+  </a>
+
+  </p>
+</footer>
+</body>
+
+</html>

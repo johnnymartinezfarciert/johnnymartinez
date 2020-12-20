@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<style>
+		table {
+			margin: 0px auto;
+			border: solid blue 2px;
+			border-collapse: collapse;
+		}
+
+		td {
+			border: solid blue 2px;
+		}
+
+	</style>
+	<script>
+		var slots;
+		var swapped;
+
+		//fill table
+		function setup() {
+			//slots in table are arranged in a multi-dimensional array
+			slots = new Array(
+				[document.getElementById("slot00"),
+					document.getElementById("slot01"),
+					document.getElementById("slot02"),
+					document.getElementById("slot03")
+				],
+				[document.getElementById("slot10"),
+					document.getElementById("slot11"),
+					document.getElementById("slot12"),
+					document.getElementById("slot13")
+				],
+				[document.getElementById("slot20"),
+					document.getElementById("slot21"),
+					document.getElementById("slot22"),
+					document.getElementById("slot23")
+				],
+				[document.getElementById("slot30"),
+					document.getElementById("slot31"),
+					document.getElementById("slot32"),
+					document.getElementById("slot33")
+				]);
+
+			placeNumbers();
+		}
+
+		function placeNumbers() {
+			//array of numbers 1-15
+			var numbers = new Array();
+			var randomLoc;
+			//place holder variable
+			var temp;
+
+			for (var i = 0; i < 16; i++)
+				numbers[i] = i;
+
+			for (i = 0; i < 16; i++) {
+				randomLoc = Math.floor(Math.random() * 15 + 1);
+				temp = numbers[i];
+				numbers[i] = numbers[randomLoc];
+				numbers[randomLoc] = temp;
+			}
+
+			i = 0;
+			for (var rows = 0; rows < 4; rows++)
+				for (var cols = 0; cols < 4; cols++) {
+					if (numbers[i] != 0)
+						slots[rows][cols].innerHTML = numbers[i];
+					else
+						slots[rows][cols].innerHTML = "";
+
+					++i;
+				}
+		}
+
+		function doClick(row, col) {
+			var top = row - 1;
+			var bottom = row + 1;
+			var left = col - 1;
+			var right = col + 1;
+
+			swapped = false;
+
+			if (top != -1 && slots[top][col].innerHTML == "")
+				swap(slots[row][col], slots[top][col]);
+			else if (right != 4 &&
+				slots[row][right].innerHTML == "")
+				swap(slots[row][col], slots[row][right]);
+			else if (bottom != 4 &&
+				slots[bottom][col].innerHTML == "")
+				swap(slots[row][col], slots[bottom][col]);
+			else if (left != -1 &&
+				slots[row][left].innerHTML == "")
+				swap(slots[row][col], slots[row][left]);
+			else
+				alert("You cannot move that number.");
+
+			checkWin();
+		}
+
+		function swap(firstSlot, secondSlot) {
+			swapped = true;
+			secondSlot.innerHTML = firstSlot.innerHTML;
+			firstSlot.innerHTML = "";
+		}
+
+		function checkWin() {
+			var win = true;
+
+			for (var i = 0; i < 4; i++)
+				for (var j = 0; j < 4; j++)
+					if (!(slots[i][j].innerHTML == i * 4 + j + 1))
+						if (!(i == 3 && j == 3))
+							win = false;
+			if (win)
+				if (window.prompt("Play again?", "yes"))
+					fillSlots();
+		}
+
+	</script>
+
+</head>
+
+<body onload="setup()">
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+	
+
+	<div class="pageheading">
+		<h2> Homework 7 - Extra Credit </h2>
+	</div>
+	<div id="partsNav">
+		<ul>
+			<li> <a href="hw7_1.html"> Part 1 </a> </li>
+			<li> <a href="hw7_2.html"> Part 2 </a> </li>
+			<li> <a href="hw7_3.html"> Part 3 </a> </li>
+			<li> <a href="hw7_4.html"> Part 4 </a> </li>
+			<li> <a href="hw7_ec.html"> Extra Credit </a> </li>
+		</ul>
+	</div>
+	<section class="content">
+
+		<div>
+			<table width="200" height="200">
+				<tr>
+					<td align="center"><span onclick="doClick( 0, 0 )" id="slot00" /></td>
+					<td align="center"><span onclick="doClick( 0, 1 )" id="slot01" /></td>
+					<td align="center"><span onclick="doClick( 0, 2 )" id="slot02" /></td>
+					<td align="center"><span onclick="doClick( 0, 3 )" id="slot03" /></td>
+				</tr>
+				<tr>
+					<td align="center"><span onclick="doClick( 1, 0 )" id="slot10" /></td>
+					<td align="center"><span onclick="doClick( 1, 1 )" id="slot11" /></td>
+					<td align="center"><span onclick="doClick( 1, 2 )" id="slot12" /></td>
+					<td align="center"><span onclick="doClick( 1, 3 )" id="slot13" /></td>
+				</tr>
+				<tr>
+					<td align="center"><span onclick="doClick( 2, 0 )" id="slot20" /></td>
+					<td align="center"><span onclick="doClick( 2, 1 )" id="slot21" /></td>
+					<td align="center"><span onclick="doClick( 2, 2 )" id="slot22" /></td>
+					<td align="center"><span onclick="doClick( 2, 3 )" id="slot23" /></td>
+				</tr>
+				<tr>
+					<td align="center"><span onclick="doClick( 3, 0 )" id="slot30" /></td>
+					<td align="center"><span onclick="doClick( 3, 1 )" id="slot31" /></td>
+					<td align="center"><span onclick="doClick( 3, 2 )" id="slot32" /></td>
+					<td align="center"><span onclick="doClick( 3, 3 )" id="slot33" /></td>
+				</tr>
+			</table>
+
+		</div>
+
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 17);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

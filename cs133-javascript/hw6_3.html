@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<style>
+		table {
+			border-radius: 8px;
+			border-color: red;
+			border-style: solid;
+			border-width: 5px;
+			margin: 0px auto;
+		}
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	<script src="https://rawgit.com/digitalBush/jquery.maskedinput/1.4.1/dist/jquery.maskedinput.min.js"></script>
+
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+	<script>
+		/*
+THe script should
+use String method split to extract the area code as a token, the first 3 digits
+of the phone number as a token, and the last 4 digits of the phone number as a token
+*/
+
+		//  use JQuery to mask for the input
+		$(document).ready(function() {
+			jQuery(function($) {
+				$("#phoneString").mask("(999) 999-9999");
+			});
+		});
+
+		function parseNumber() {
+			if ($("#myForm").valid()) {
+				//  Initializing variables
+				var phoneString = $('#phoneString').val();
+
+				//Splitting user input
+				var tokens = phoneString.split(" ");
+
+				//ouput data tokents
+				// $('#areaCode').val(tokens[0]);
+				// $('#phoneNumber').val(tokens[1]);;
+
+				document.myForm.areaCode.value = tokens[0];
+				document.myForm.phoneNumber.value = tokens[1];
+
+			} else {
+				return false;
+			}
+		}
+
+	</script>
+	<script>
+		//  Using the getTimeZoneOffset(),
+		// write the hours difference between Est
+		// and UTC. EST is 3 hours ahead of parseFloat
+		// not Easter daylight time the hours diffence changes by an hour-->
+
+		function time() {
+			var current = new Date();
+			var time = document.getElementById("time");
+			time.innerHTML = "<p>Current local date and time: " + current.toString() + "</p>";
+			time.innerHTML += "<p>Current .toLocaleString() date and time: " + current.toLocaleString() + "</p>";
+			time.innerHTML += "<p>Current UTC date and time: " + current.toUTCString() + "</p>";
+			time.innerHTML += "<p>Hourse difference between PST and UTC: " + current.getTimezoneOffset() / 60 + "</p>";
+			time.innerHTML += "<p>Hourse difference between EST and UTC: " + (current.getTimezoneOffset() / 60 - 3) + "</p>";
+
+		}
+
+	</script>
+
+</head>
+
+<body onload="time()">
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Homework 6 - Part 3 </h2>
+	</div>
+	<div id="partsNav">
+		<ul>
+			<li> <a href="hw6_1.html"> Part 1 </a> </li>
+			<li> <a href="hw6_2.html"> Part 2 </a> </li>
+			<li> <a href="hw6_3.html"> Part 3 </a> </li>
+			<li> <a href="hw6_4.html"> Part 4 </a> </li>
+			<li> <a href="hw6_ec.html"> Extra Credit </a> </li>
+		</ul>
+	</div>
+	<section class="content">
+
+		<div>
+			<div id="time">
+			</div>
+			<br>
+			<br>
+			<table>
+				<tr>
+					<th>
+						<!-- display desired -->
+						<p> input telephone number in format(999) 999-9999 </p>
+					</th>
+				</tr>
+				<!-- input a telephone number as a string -->
+				<form id="myForm" name="myForm">
+					<tr>
+						<td><label> Phone : <br><input size="14" type="text" name="phoneString" id="phoneString"> </label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="button" value="Split" onclick="parseNumber()">
+					<tr>
+						</td>
+						<!-- display the area code in one text field -->
+					<tr>
+						<td>
+							Area Code : <input type="text" name="areaCode" id="areaCode">
+						</td>
+					</tr>
+					<!-- the even digit phone number in another text field -->
+					<tr>
+						<td>
+							Phone Number : <input type="text" id="phoneNumber" name="phoneNumber">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="reset" value="Reset">
+						</td>
+					</tr>
+				</form>
+			</table>
+		</div>
+
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

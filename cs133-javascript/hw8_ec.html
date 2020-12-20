@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<style>
+		div.body {
+			height: auto;
+		}
+
+		div#solution {
+			width: 700px;
+			height: auto;
+			margin: 0 auto;
+			padding: 10px;
+			background-color: black;
+			color: white;
+		}
+
+		div#galleryArea {
+			position: relative;
+			height: 600px;
+
+		}
+
+		button#prev {
+			position: absolute;
+			top: 10px;
+			left: 5px;
+			width: 100px;
+		}
+
+		button#next {
+			position: absolute;
+			top: 10px;
+			right: 5px;
+			width: 100px;
+		}
+
+		div#picArea {
+			text-align: center;
+			margin: 0 auto;
+		}
+
+		img#pic {
+			border: 1px solid white;
+			margin: 0 auto;
+		}
+
+	</style>
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+	<script>
+		var index = -1; // Index of current image displayed
+		var timeoutId = null; // The id returned from a setTimeout call
+
+		function showPic(dir) {
+			var xhr = createXHR();
+			if (xhr == null) {
+				return;
+			}
+
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					// Get the response which is imageName^index
+					var parts = xhr.responseText.split("^");
+					index = parseInt(parts[1]);
+
+					// Hide the enclosing div element before setting the img properties.
+					// The img onload event handler, which is set in init(), makes the enclosing div visible only after
+					// the image is completely loaded. This prevents the caption from jumping,
+					// and the previous image from fading in again before the new one can take its place.
+					var picElem = document.getElementById("pic");
+					document.getElementById("picArea").style.visibility = "hidden";
+
+					// Set the img src, alt, and opacity
+					picElem.src = parts[0];
+					picElem.alt = parts[0];
+					setOpacity("pic", 0);
+
+					// Set the picture caption
+					document.getElementById("picName").innerHTML = "<strong>Image #" + (index + 1) + "</strong><br />" + parts[0];
+
+					// Stop previous fadeIn if it's still running.
+					// Start a new fadeIn process.
+					stopFadeIn();
+					fadeIn("pic", 0);
+				}
+			};
+			var uri = "gallery9ec.php?index=" + index + "&dir=" + dir;
+			xhr.open("GET", encodeURI(uri), true);
+			xhr.send(null);
+		}
+
+		function fadeIn(elemId, opacity) {
+			// Increment and set the opacity
+			opacity++;
+			setOpacity(elemId, opacity);
+
+			// Set timer to call fadeIn again only if we're not done,
+			if (opacity < 100) {
+				timeoutId = setTimeout(function() {
+					fadeIn(elemId, opacity);
+				}, 10);
+			}
+		}
+
+		function stopFadeIn() {
+			if (timeoutId != null) {
+				clearTimeout(timeoutId);
+				timeoutId = null;
+			}
+		}
+
+		function setOpacity(elemId, opacity) {
+			var el = document.getElementById(elemId).style;
+			el.opacity = (opacity / 100);
+			el.MozOpacity = (opacity / 100);
+			el.KhtmlOpacity = (opacity / 100);
+			el.filter = "alpha(opacity=" + opacity + ")";
+		}
+
+		function createXHR() {
+			if (typeof XMLHttpRequest != "undefined") {
+				return new XMLHttpRequest();
+			} else if (typeof ActiveXObject != "undefined") {
+				if (typeof arguments.callee.activeXString != "string") {
+					var versions = ["MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0", "MSXML2.XMLHttp"];
+					var i, len;
+
+					for (i = 0, len = versions.length; i < len; i++) {
+						try {
+							new ActiveXObject(versions[i]);
+							arguments.callee.activeXString = versions[i];
+							break;
+						} catch (ex) {
+							//skip
+						}
+					}
+				}
+				return new ActiveXObject(arguments.callee.activeXString);
+			} else {
+				throw new Error("No XHR object available.");
+			}
+		}
+
+		function init() {
+			document.getElementById("pic").onload = function() {
+				document.getElementById('picArea').style.visibility = "visible";
+			};
+			// Attach event handlers
+			document.getElementById("prev").onclick = function() {
+				showPic(-1);
+			};
+			document.getElementById("next").onclick = function() {
+				showPic(1);
+			};
+
+			// Show the first picture
+			showPic(1);
+		}
+
+	</script>
+
+
+</head>
+
+<body onload="init();">
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Homework 8 Extra Credit </h2>
+	</div>
+
+	<section class="content">
+
+		<div id="solution">
+			<h4>Images</h4>
+
+			<div id="galleryArea">
+				<button id="prev">&lt;&lt; Previous</button>
+				<button id="next">Next >></button>
+				<div id="picArea">
+					<p><img width="300" height="400" id="pic" src="" alt="" /></p><br>
+
+					<p><span id="picName"></span></p>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<footer>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<HTML lang ="en">
+
+<head>
+
+<title> CNIT 133 HomeWork Homepage </title>
+
+<meta charset="utf-8">
+<link rel="Stylesheet" href="Stylesheet.css">
+<script src="hw3Script.js"></script>
+<!-- Part 3 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("textarea").css({
+            "color": "white",
+            "background-color": "black",
+            "font-family": "Arial",
+            "font-size": "20px",
+            "padding": "5px"
+        });
+    });
+});
+</script>
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+<section class="content">
+  <div id="tabs">
+    <ul>
+    <li><a href="hw3_1.html">Part 1</a></li>
+    <li><a href="hw3_2.html">Part 2</a></li>
+    <li><a href="hw3_3.html">Part 3</a></li>
+    <li><a href="hw3_4.html">Part 4</a></li>
+    <li><a href="hw3_5.html">Part 5 </a></li>
+    <li><a href="hw3_6.html">Part 6 </a></li>
+    <li><a href="hw3_ec.html">Extra Credit </a></li>
+    </ul>
+  </div>
+  <div>
+    <h3> Credit Summary </h3>
+    <hr>
+    <form name="creditForm">
+      <table>
+        <tr><td> Account number </td><td><input type="text" name ="account"></td> </tr>
+        <tr><td> Balance at the beginning of the month </td> <td><input type="text" name="balance"></td></tr>
+        <tr><td> Total of all items charged by this customer this month </td><td><input type="text" name="itemsCharged"></td></tr>
+        <tr><td> Total of all credits applied to this customer's account this month </td><td><input type="text" name="creditsCharged"></td> </tr>
+        <tr><td>Allowed credit limit </td><td><input type="text" name="creditLimit"></td></tr>
+        <tr><td><input type="button" value="Submit" onclick="chargeAccount()"></td><td><input  type="reset" value="reset"></td> </tr>
+        <tr><td colspan="2"></td></tr>
+        <tr><td> Summary:</td><td><textarea name="summary"></textarea></td></tr>
+        <tr><td> Credit Available </td><td><textarea name="newLimit"></textarea> </td></tr>
+      </table>
+      <button> Change the background-color and text </button>
+
+    </form>
+  </div>
+
+</section>
+
+<footer>
+
+    <p>
+     <script type="text/javascript">
+        var dateModified = document.lastModified;
+         mydate = dateModified.slice(0,16);
+         document.write("Last updated: " + mydate);
+    </script>
+    <a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+    </a>
+
+    </p>
+</footer>
+</body>
+
+</html>

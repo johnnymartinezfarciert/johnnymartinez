@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<style>
+		.dots {
+			border-radius: 7px;
+			border-style: dotted;
+			padding: 20px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		td {
+			font-family: helvetica;
+			font-size: 18px;
+
+		}
+
+	</style>
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<script>
+		function getTime() {
+
+			var xmlhttp = new XMLHttpRequest();
+			//create the function to be executed when the server response is ready
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.myForm.time.value = xmlhttp.responseText;
+				}
+			};
+			// send the request off to a PHP file (serverTime.php) on the serve
+			xmlhttp.open("GET", "serverTime.php", true);
+			xmlhttp.send();
+
+			var xmlhttp2 = new XMLHttpRequest();
+			//create the function to be executed when the server response is ready
+			xmlhttp2.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.myForm.time2.value = xmlhttp2.responseText;
+				}
+			};
+			// send the request off to a PHP file (serverTime.php) on the serve
+			xmlhttp2.open("GET", "serverTime2.php", true);
+			xmlhttp2.send();
+
+			var xmlhttp3 = new XMLHttpRequest();
+			//create the function to be executed when the server response is ready
+			xmlhttp3.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.myForm.time3.value = xmlhttp3.responseText;
+				}
+			};
+			// send the request off to a PHP file (serverTime.php) on the serve
+			xmlhttp3.open("GET", "serverTime3.php", true);
+			xmlhttp3.send();
+
+		}
+
+	</script>
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Homework 8 Part 2 </h2>
+	</div>
+
+	<section class="content">
+
+		<div>
+			<table>
+				<form name="myForm">
+					<tr>
+						<td>Name : </td>
+						<td><input type="text" onblur="getTime()" name="username"></td>
+					</tr>
+					<tr>
+						<td>Time : </td>
+						<td><input type="text" name="time"></td>
+					</tr>
+					<tr>
+						<td>Date :</td>
+						<td> <input type="text" name="time2"></td>
+						<td><input type="text" name="time3"></td>
+					</tr>
+				</form>
+			</table>
+
+		</div>
+
+	</section>
+
+	<footer>
+	</footer>
+</body>
+
+</html>

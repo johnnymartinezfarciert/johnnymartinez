@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<script>
+		/* script using a form that allows the user to input several lines of text
+and a search character and uses the String method charAt to determine the
+number of occurences of the search character within the text.
+**/
+
+		function search() {
+			var count = 0;
+			var searchChar = document.getElementById("searchChar").value.toLowerCase().charAt(0);
+			var sentence = document.getElementById("sentence").value.toLowerCase();
+
+			for (i = 0; i < sentence.length; i++) {
+				if (sentence.charAt(i) == searchChar)
+					count++;
+			}
+			if (count == 0) {
+				/* if the search character is not found within the text then display within a new
+				using the window.open method, the message, 'Search character not found in text string'
+				aling witht he search character.  **/
+
+				// assemble HTML to write into new window:
+				var myText = "<html>\n";
+				myText += "<head>\n";
+				myText += "<title> Character Not Found </title>\n";
+				myText += "</head>\n";
+				myText += "<body>\n";
+				myText += "<div align='center'>\n";
+				myText += "<h4> Search Character " + searchChar + " Not Found </h4>\n";
+				myText += "<input type='button' value='Close Window' onclick='window.close()'>\n";
+				myText += "</div>\n";
+				myText += "</body>\n";
+				myText += "</html>\n";
+
+				/* Your ne window should be a width of 300 px
+				and height of 1000 px and should not obsure any of the main content already on
+				the page(left, top) */
+
+				var newWindow = window.open("", "new_window", "top=220,left=400,width=300,height=100");
+				newWindow.focus();
+
+				//pump html into new window
+				newWindow.document.write(myText);
+
+				//tell browser that newWindow document is finished loading
+				newWindow.document.close();
+
+
+			} else {
+				document.getElementById("output").value = count + " occurence(s) of " + searchChar + " found";
+			}
+		}
+
+	</script>
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Homework 6 - Part 2 </h2>
+	</div>
+	<div id="partsNav">
+		<ul>
+			<li> <a href="hw6_1.html"> Part 1 </a> </li>
+			<li> <a href="hw6_2.html"> Part 2 </a> </li>
+			<li> <a href="hw6_3.html"> Part 3 </a> </li>
+			<li> <a href="hw6_4.html"> Part 4 </a> </li>
+			<li> <a href="hw6_ec.html"> Extra Credit </a> </li>
+		</ul>
+	</div>
+	<section class="content">
+
+		<div>
+			<form>
+				<!-- user a form text area for the text -->
+				<label> Enter a sentence : <br> <textarea cols="40" name="sentence" id="sentence"> </textarea>
+				</label>
+				<br><br>
+				<!-- form text input box for the search character  -->
+				<label> Enter character to search for : <br>
+					<input type="text" name="searchChar" id="searchChar">
+				</label>
+				<br> <br>
+				<input type="button" value="search" onClick="search();">
+				<input type="reset" value="Reset" onClick="locaiton.reload();">
+				<br>
+				<br>
+				<!-- display number of occurences if found in textarea output  -->
+				Results :<br>
+				<textarea id="output" cols="40" rows="8">
+    </textarea>
+			</form>
+
+
+		</div>
+
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

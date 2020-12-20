@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<HTML lang ="en">
+
+<head>
+
+<title> CNIT 133 HomeWork Homepage </title>
+
+<meta charset="utf-8">
+<style>
+.dots {
+	border-radius: 7px;
+	border-style: dotted;
+	padding: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+td {
+	font-family: helvetica;
+	font-size: 18px;
+
+}
+</style>
+<link rel="Stylesheet" href="Stylesheet.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script>
+
+
+/* function getPlace
+     parameter: stcode code
+     action: create the XMLHttpRequest object, register the handler for onreadystate,
+             prepare to send the request (with open), and send the request, along
+             with the stcode code, to the serve */
+
+
+function getPlace(stcode)   {
+
+/* create an XMLHttpRequest object based on the type of web browser being used.
+*/
+	var ajaxRequest;  // The variable that makes Ajax possible!
+
+	try{
+		// Opera 8.0+, Firefox, Safari
+		ajaxRequest = new XMLHttpRequest();
+	} catch (e){
+		// Internet Explorer Browsers
+		try{
+			ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+		} catch (e) {
+			try{
+				ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+			} catch (e){
+				// Something went wrong
+				alert("Your browser broke!");
+				return false;
+			}
+		}
+	}
+
+
+/* Register the embedded receiver function as the handler */
+
+
+    ajaxRequest.onreadystatechange = function() {
+
+/* 4 means that the response has been completed and 200 means the request was successfully
+    copleted */
+
+    if (ajaxRequest.readyState == 4 && ajaxRequest.status == 200) {
+
+
+/* The receiver gets the response text, uses the split method to spearate it into
+   name and state, and sets the text boxes for name and state to the values received
+
+   The assignments to the name and state text boxes are placed in selection
+   constructs to preven the overwriting of user-input name and capital names
+   for the cases  where the stcode code was NOT found on the server or the data
+   from the server was incorrect
+
+*/
+
+        var result = ajaxRequest.responseText;
+        var place = result.split(', ');
+
+     if (document.getElementById("name").value == "")
+             document.getElementById("name").value = place[0];
+
+     if (document.getElementById("capital").value == "")
+             document.getElementById("capital").value = place[1];
+      if (document.getElementById("population").value == "")
+            document.getElementById("population").value = place[2];
+
+	}
+     }
+
+
+/* Specify the URL of server-side script that will be used in our Ajax application.
+   Use the send method to send our request to the server. The name and capital text
+   boxes pull values from the server from "getState.php"
+   without having to reload the entire page! */
+
+
+    ajaxRequest.open("GET", "getState.php?stcode=" + stcode);
+    ajaxRequest.send(null);
+
+}
+
+
+</script>
+<script>
+
+
+    //  function getState(stcode) {
+    //        $.get("getState.php", {"stcode": stcode}, function (result) {
+    //            var place = result.split(', ');
+    //            document.getElementById("name").value = place[0];
+    //            document.getElementById("capital").value = place[1];
+    //            document.getElementById("population").value = place[1];
+    //        });
+    //    }
+</script>
+
+
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+<div class = "pageheading">
+	<h2> Homework 8 Part 4 </h2>
+</div>
+
+<section class="content">
+
+<div>
+  <table>
+<tr>
+  <td>State Code:</td>
+  <td><input type="text" onblur="getPlace(this.value)" name="stcode" size="10" autofocus></td>
+</tr>
+<tr>
+  <td>Name:</td>
+  <td><input type="text" name="name" id="name" size="30" readonly="readonly"></td>
+</tr>
+<tr>
+  <td>Capital:</td>
+  <td><input type="text" name="capital" id="capital" size="30" readonly="readonly"></td>
+</tr>
+<tr>
+  <td>Population:</td>
+  <td><input type="text" name="population" id="population" size="30" readonly="readonly"></td>
+</tr>
+<tr>
+<td>  <input type="reset" value="Clear form" onclick="window.location.reload();"></td>
+</tr>
+</table>
+</div>
+
+</section>
+
+<footer>
+</footer>
+</body>
+
+</html>

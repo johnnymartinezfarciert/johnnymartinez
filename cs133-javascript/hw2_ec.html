@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<HTML lang ="en">
+
+<head>
+
+<title> CNIT 133 HomeWork Homepage </title>
+
+<meta charset="utf-8">
+<link rel="Stylesheet" href="Stylesheet.css">
+<!--  jQuery link to library  -->
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+
+    <script type="text/javascript">
+
+// function to show exchange values
+      function exchangeMe() {
+
+// setting the US dollar variable
+        var USD=parseFloat(document.getElementById("USD").value);
+
+// setting rate variables
+        var pnd=parseFloat(document.getElementById("pnd").value);
+        var cdol=parseFloat(document.getElementById("cdol").value);
+        var euro=parseFloat(document.getElementById("euro").value);
+        var yen=parseFloat(document.getElementById("yen").value);
+        var mexp=parseFloat(document.getElementById("mexp").value);
+
+// setting target variables for output
+        var Vpnd=document.getElementById("Vpnd");
+        var Vcdol=document.getElementById("Vcdol");
+        var Veuro=document.getElementById("Veuro");
+        var Vyen=document.getElementById("Vyen");
+        var Vmexp=document.getElementById("Vmexp");
+
+// calculations sent to output targets
+        Vpnd.value=(USD * pnd).toFixed(2);
+        Vcdol.value=(USD * cdol).toFixed(2);
+        Veuro.value=(USD * euro).toFixed(2);
+        Vyen.value=(USD * yen).toFixed(2);
+        Vmexp.value=(USD * mexp).toFixed(2);
+
+      }
+
+// jQuery color box
+      $(document).ready(function() {
+        $("#USD").click(function() {
+          $(this).css('background-color', '#f0f0f0');
+        });
+      });
+
+// jQuery slide panel
+      $(document).ready(function() {
+        $("#instrCopy").click(function() {
+          $("#instr").slideToggle("slow");
+        });
+      });
+
+    </script>
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+<section class="content">
+
+<div>
+<h3> Extra Credit - Foreign Exchange </h3>
+<h4 id="instrCopy">Click to Show/Hide Instructions</h4>
+
+<div id="instr">
+  <p id="target">The foreign exchange rates on June 20,2015 </p>
+  <p>	Enter a dollar amount in the table below
+    <br>to see the corresponding foreign exchange values
+  </p>
+
+</div><!--end instr-->
+
+<!-- marker point [money table]-->
+
+<div>
+
+  <form>
+    <table border='1'>
+      <tr><th colspan="3" style=
+        "text-transform:uppercase;font-size:.9em;">
+        Monetary Exchange Rates</th></tr>
+        <tr><th>Currency</th>
+          <th class="rateCol">Rate</th><th>Value</th>
+        </tr>
+        <tr><td>British Pound &#40;&#xa3;&#41;</td>
+          <td><input type="text" value="0.62998" class="rateCol"
+            id="pnd" readonly></td>
+            <td><input type="text" id="Vpnd" class="valCol" readonly></td>
+          </tr>
+          <tr><td>Canadian Dollar &#40;C&#36;&#41;</td>
+            <td><input type="text" value="1.227" class="rateCol"
+              id="cdol" readonly></td>
+              <td><input type="text" id="Vcdol" class="valCol" readonly></td>
+            </tr>
+            <tr><td>Eurozone Euro &#40;&#x20ac;&#41;</td>
+              <td><input type="text" value="0.88052" class="rateCol"
+                id="euro" readonly></td>
+                <td><input type="text" id="Veuro" class="valCol" readonly></td>
+              </tr>
+              <tr><td>Japanese Yen &#40;&#xffe5;&#41;</td>
+                <td><input type="text" value="102.700" class="rateCol"
+                  id="yen" readonly></td>
+                  <td><input type="text" id="Vyen" class="valCol" readonly></td>
+                </tr>
+                <tr><td>Mexican Peso &#40;Mex&#36;&#41;</td>
+                  <td><input type="text" value="115.3477" class="rateCol"
+                    id="mexp" readonly></td>
+                    <td><input type="text" id="Vmexp" class="valCol" readonly></td>
+                  </tr>
+                  <tr><td colspan="2" style="font-weight:bold;font-style:oblique">
+                    Enter US Dollar &#40;US&#36;&#41;</td>
+                    <td><input type="text" class="valCol" id="USD"></td>
+                  </tr>
+                </table>
+
+                <div id="buttons-ec" class="cnt">
+                  <input type="button" onclick="exchangeMe()" value="Calculate"
+                  class="btn-med">
+                  <input type="reset" value="Clear" class="btn-med">
+                </div> <!--end buttons-ec-->
+
+              </form>
+
+</div>
+
+</section>
+
+<footer>
+
+    <p>
+     <script type="text/javascript">
+        var dateModified = document.lastModified;
+         mydate = dateModified.slice(0,16);
+         document.write("Last updated: " + mydate);
+    </script>
+    <a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+    </a>
+
+    </p>
+</footer>
+</body>
+
+</html>

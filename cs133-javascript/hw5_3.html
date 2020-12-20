@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<style>
+
+	</style>
+
+	<script>
+		var total = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
+		var income, incomef, entry;
+
+		function start() {
+			for (var i = 0; i < total.length; ++i)
+				total[i] = 0; // intialize array counter to 0
+		}
+
+		function addEntry() {
+			income = 200 + parseFloat(document.getElementById("newEntry").value) * 0.09;
+			incomef = income.toFixed(0);
+
+			if (isNaN(incomef))
+				window.alert("please enter numbers");
+
+			else {
+				if (incomef <= 299.99)
+					++total[0]
+				else if (incomef <= 399.99)
+					++total[1]
+				else if (incomef <= 499.99)
+					++total[2]
+				else if (incomef <= 599.99)
+					++total[3]
+				else if (incomef <= 699.99)
+					++total[4]
+				else if (incomef <= 799.99)
+					++total[5]
+				else if (incomef <= 899.99)
+					++total[6]
+				else if (incomef <= 999.99)
+					++total[7]
+				else if (incomef <= 1099.99)
+					++total[8];
+			}
+
+			if (isNaN(incomef))
+				return
+			else {
+				outputArray();
+			}
+		}
+
+		function outputArray() {
+			document.getElementById("output").value = "Number of salespeople who earned in the following ranges :\n" +
+				"200 -299.99 \t " + total[0] + "\n" +
+				"300 -399.99 \t " + total[1] + "\n" +
+				"400 -499.99 \t " + total[2] + "\n" +
+				"500 -599.99 \t " + total[3] + "\n" +
+				"600 -699.99 \t " + total[4] + "\n" +
+				"700 -799.99 \t " + total[5] + "\n" +
+				"800 -899.99 \t " + total[6] + "\n" +
+				"900 -999.99 \t " + total[7] + "\n" +
+				"1000 -1099.99 \t " + total[8];
+
+			document.getElementById("income").value = incomef;
+		}
+
+	</script>
+
+
+</head>
+
+<body onload="start()">
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Part 3</h2>
+	</div>
+	<div id="partsNav">
+		<ul>
+			<li> <a href="hw5_1a.html"> Part 1a </a> </li>
+			<li> <a href="hw5_1b.html"> Part 1b </a> </li>
+			<li> <a href="hw5_2.html"> Part 2 </a> </li>
+			<li> <a href="hw5_3.html"> Part 3 </a> </li>
+			<li> <a href="hw5_4.html"> Part 4 </a> </li>
+		</ul>
+	</div>
+	<section class="content">
+		<form name="myForm">
+			Enter gross sales:
+			<input type="text" id="newEntry"> <br> <br>
+			Income Earner : <input type="text" id="income">
+			<br> <br>
+			<input type="button" value="Submit" onclick="addEntry()"> <br><br>
+			<textarea id="output" rows="7" cols="30"> </textarea><br><br>
+			<input type="reset" value="Reset" onclick="window.location.reload();">
+
+		</form>
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

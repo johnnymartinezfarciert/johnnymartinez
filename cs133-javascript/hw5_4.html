@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<style>
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+	</script>
+	<script>
+		var a, m = 0,
+			count = 0,
+			output;
+		var numberString = "";
+		a = new Array(10);
+
+		function start() {
+			for (var k = 0; k < a.length; k++)
+				a[k] = 0;
+		}
+
+		function addEntry() {
+
+			input = parseInt(document.getElementById("input").value);
+
+			if (input < 10 || input > 100 || isNaN(input) || count > 10) {
+				alert("Invalid Entry");
+			}
+			count++;
+
+			for (var i = 0; i < a.length; i++) {
+				if (input == a[i]) {
+					break;
+				} else if (a[i] == 0) {
+					numberString += input + " ";
+					a[m++] = input;
+					break;
+				}
+			}
+
+			outputArray();
+		}
+
+
+		function outputArray() {
+			document.getElementById("output").value = ("count of numbers entered: " + parseInt(count) + "\n");
+			document.getElementById("output").value += "Results: " + numberString;
+
+		}
+
+	</script>
+
+</head>
+
+<body onload="start()">
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Part 4</h2>
+	</div>
+	<div id="partsNav">
+		<ul>
+			<li> <a href="hw5_1a.html"> Part 1a </a> </li>
+			<li> <a href="hw5_1b.html"> Part 1b </a> </li>
+			<li> <a href="hw5_2.html"> Part 2 </a> </li>
+			<li> <a href="hw5_3.html"> Part 3 </a> </li>
+			<li> <a href="hw5_4.html"> Part 4 </a> </li>
+		</ul>
+	</div>
+	<section class="content">
+		<form name="numTest">
+			Enter a number between 10 and 100:
+			<input type="text" id="input"> <br> <br>
+			<input type="button" value="Submit" onclick="addEntry()"> <br><br>
+			<textarea id="output" rows="7" cols="30"> </textarea><br><br>
+			<input type="reset" value="Reset" onclick="window.location.reload();">
+		</form>
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

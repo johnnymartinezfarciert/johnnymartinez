@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<section class="content">
+
+		<div>
+			<h3> Part 4 - Squares and cubes </h3>
+			<script type="text/javascript">
+				var num = 1; // declared and initialized counter variable
+
+				// using document.writeln() to write each line
+				// incrementing the counter variable after each table row
+				// increments are commented inline
+				document.writeln('<table border="1">',
+					'<tr><th>Number</th><th>Square</th><th>Cube</th>', '</tr>');
+				document.writeln('<tr><td>' + num + '</td><td>' +
+					Math.pow(num, 2) + '</td><td>' + Math.pow(num, 3) + '</td></tr>');
+				num++; // incrementing variable (results in 2)
+				document.writeln('<tr><td>' + num + '</td><td>' +
+					Math.pow(num, 2) + '</td><td>' + Math.pow(num, 3) + '</td></tr>');
+				num++; // incrementing variable (results in 3)
+				document.writeln('<tr><td>' + num + '</td><td>' +
+					Math.pow(num, 2) + '</td><td>' + Math.pow(num, 3) + '</td></tr>');
+				num++; // incrementing variable (results in 4)
+				document.writeln('<tr><td>' + num + '</td><td>' +
+					Math.pow(num, 2) + '</td><td>' + Math.pow(num, 3) + '</td></tr>');
+				num++; // incrementing variable (results in 5)
+				document.writeln('<tr><td>' + num + '</td><td>' +
+					Math.pow(num, 2) + '</td><td>' + Math.pow(num, 3) + '</td></tr>');
+				num++; // incrementing variable (results in 6)
+				document.writeln('<tr><td>' + num + '</td><td>' +
+					Math.pow(num, 2) + '</td><td>' + Math.pow(num, 3) + '</td></tr>');
+				document.writeln('</table>');
+
+			</script>
+
+		</div>
+
+		<div>
+			<h5>
+				Click on Display Table button to create another table of<br>squares
+				and cubes from numbers 7-10
+			</h5>
+			<button type="button" onclick="showMe()" class="btn-lrg">
+				Display Table
+			</button>
+
+			<script type="text/javascript">
+				// setting up markup variable that will contain HTML
+				var htmlCode = "";
+
+				num++; // incrementing variable (results in 7)
+
+				// showMe() function will display the table
+
+				function showMe() {
+
+					// creates the table by appending markup to the htmlCode variable
+					htmlCode = '<table border="1">';
+					htmlCode +=
+						'<tr><th>Number</th><th>Square</th><th>Cube</th></tr>';
+
+					htmlCode += '<tr><td>' + num + '</td><td>' +
+						Math.pow(num, 2) + '</td><td>' + Math.pow(num, 3) + '</td></tr>';
+
+					num++; // incrementing variable (results in 8)
+					htmlCode += '<tr><td>' + num + '</td><td>' +
+						Math.pow(num, 2) + '</td><td>' + Math.pow(num, 3) + '</td></tr>';
+
+					num++; // incrementing variable (results in 9)
+					htmlCode += '<tr><td>' + num + '</td><td>' +
+						Math.pow(num, 2) + '</td><td>' + Math.pow(num, 3) + '</td></tr>';
+
+					num++; // incrementing variable (results in 10)
+					htmlCode += '<tr><td>' + num + '</td><td>' +
+						Math.pow(num, 2) + '</td><td>' + Math.pow(num, 3) + '</td></tr>';
+
+					htmlCode += '</table>';
+
+					// set this back to 7 in order to keep the display only to numbers 7-10
+					num = 7;
+
+					document.getElementById("hiddenTbl").innerHTML = htmlCode;
+
+				}
+
+			</script>
+			<div id="hiddenTbl">
+			</div>
+		</div>
+
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

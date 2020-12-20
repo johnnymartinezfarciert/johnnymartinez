@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<style>
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		function daysOfchristmas() {
+			var days = new Array("first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth");
+			var output = "";
+
+			output += "<h1>The Twelve Days of Christmas</h1>"
+
+			for (var i = 0; i < days.length; i++) {
+				output += "<p>On the " + days[i] + " of Christmas <br> my true love sent to me:</p>"
+
+				switch (i) {
+					case 11:
+						output += "<p>Twelve drummers drumming,</p>";
+					case 10:
+						output += "<p>Eleven pipers piping,</p>";
+					case 9:
+						output += "<p>Ten lords a leaping,</p>";
+					case 8:
+						output += "<p>Nine ladies dancing,</p>";
+					case 7:
+						output += "<p>Eight maids a milking,</p>";
+					case 6:
+						output += "<p>Seven swans a swimming,</p>";
+					case 5:
+						output += "<p>Six geese a laying,</p>";
+					case 4:
+						output += "<p>Five golden rings,</p>";
+					case 3:
+						output += "<p>Four calling birds,</p>";
+					case 2:
+						output += "<p>Three French Hens,</p>";
+					case 1:
+						output += "<p>Two turtle doves,</p>";
+					case 0:
+						if (i > 0) {
+							output += "<p>And a Partridge in a pear tree.</p><br>";
+						} else {
+							output += "<p>A partridge in a pear tree.</p><br>";
+						}
+				}
+			}
+
+			output += "<div id='image'><img src='tree.png' alt='Image of a Christmas Tree'></div> <br> <button>Animate</button>"
+			document.getElementById("daysOfChristmas").innerHTML = output;
+
+			$(document).ready(function() {
+				$("button").click(function() {
+					var div = $("#image");
+					div.animate({
+						height: '220px',
+						opacity: '0.4'
+					}, "slow");
+					div.animate({
+						width: '140px',
+						opacity: '0.8'
+					}, "slow");
+					div.animate({
+						height: '100px',
+						opacity: '0.4'
+					}, "slow");
+					div.animate({
+						width: '100px',
+						opacity: '0.8'
+					}, "slow");
+				});
+			});
+		}
+
+	</script>
+
+</head>
+
+<body onload="daysOfchristmas()">
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Homework 4 </h2>
+	</div>
+
+	<section class="content">
+		<div id="tabs">
+			<ul>
+				<li><a href="hw4_1.html">Part 1</a></li>
+				<li><a href="hw4_2.html">Part 2</a></li>
+				<li><a href="hw4_3.html">Part 3</a></li>
+				<li><a href="hw4_4.html">Part 4</a></li>
+				<li><a href="hw4_5.html">Part 5 </a></li>
+				<li><a href="hw4_6.html">Part 6 </a></li>
+				<li><a href="hw4_ec.html">Extra Credit </a></li>
+			</ul>
+		</div>
+
+		<section id="daysOfChristmas">
+
+		</section>
+
+	</section>
+
+	<footer>
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

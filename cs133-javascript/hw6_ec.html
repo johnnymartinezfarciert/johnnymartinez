@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<style>
+		table {
+			margin: 0px auto;
+
+		}
+
+		.body {
+			width: 400px;
+		}
+
+	</style>
+	<script>
+		/*
+  The function below first checks if a cookie is stored at all
+  in the document.cookie.object.
+  If the document.cookie object holds some cookies, then check to see
+  if our specific cookie is stored.
+  If our cookie is found, then return the value,
+  if not= return an empty string
+
+*/
+
+		function hasReturned() {
+			var name = getCookie('name');
+
+			if (name != null && name != "") {
+				alert('welcome ' + name + '!');
+				document.myForm.name.value = name;
+				document.myForm.name.blur();
+				document.myForm.password.value = getCookie('password');
+
+			}
+		}
+
+		function getCookie(c_name) {
+			if (document.cookie.length > 0) {
+				c_start = document.cookie.indexOf(c_name + "=");
+				if (c_start != -1) {
+					c_start = c_start + c_name.length + 1;
+					c_end = document.cookie.indexOf(";", c_start);
+					if (c_end == -1) c_end = document.cookie.length;
+					return decodeURIComponent(document.cookie.substring(c_start, c_end));
+				}
+			}
+			// alert
+			return "";
+		}
+		/*
+		  The parameters of the function below hold the name of the cookiethe value
+		  of the cookie, and the number of days until the cookie expires.
+		  In the function below we first convert the number of days to a valid date
+		  , then we add the number of daysuntil the cookie should expire.
+		  After that we store the cookie name,
+		  cookie value and the expiration date in the document.cookie object.
+		*/
+
+		// funtion to set a username cookie
+		function setCookie(c_name, value, expiredays) {
+			var exdate = new Date();
+			exdate.setDate(exdate.getDate() + expiredays);
+			document.cookie = c_name + "=" + encodeURIComponent(value) + ((expiredays == null) ? "" : ";expires=" + exdate.toGMTString());
+
+			/* the function below displays a return welcome message if the cookie is set
+			  and if the cookie is not set then the name value is extracted from the form,
+			  the cookie is set for 30 days, and an initial welcome message is alerted
+			*/
+		}
+
+		function checkCookie() {
+			name = getCookie('name');
+			var password = document.myForm.password.value;
+			name = document.myForm.name.value;
+			if (name != "rosebud" || password != "komodo") {
+				window.alert("Please enter correct name and password.");
+			} else {
+				// name and password are correct
+				window.alert("Name and password are correct.");
+
+				//call a script function that will set a cookie for the username of
+				// of rosebud (set cookie to expire in 3o days)
+				setCookie('name', name, 30);
+				setCookie('password', password, 30);
+				//transfer location to another page
+				var myWindow = window.open("http://www.google.com", "google");
+				myWindow.focus();
+			}
+
+		}
+
+		//delete cookie by setting the expiration date to -1
+		function deleteCookie() {
+			var name;
+
+			name = getCookie('name');
+			if (name != null && name != "") {
+				setCookie('name', name, -1);
+				document.myForm.name.value = ""; // clears input box
+				document.myForm.password.value = ""; // clearsinput box
+				alert('Cookie deleted for ' + name);
+			}
+		}
+
+	</script>
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Homework 6 - Extra Credit </h2>
+	</div>
+	<div id="partsNav">
+		<ul>
+			<li> <a href="hw6_1.html"> Part 1 </a> </li>
+			<li> <a href="hw6_2.html"> Part 2 </a> </li>
+			<li> <a href="hw6_3.html"> Part 3 </a> </li>
+			<li> <a href="hw6_4.html"> Part 4 </a> </li>
+			<li> <a href="hw6_ec.html"> Extra Credit </a> </li>
+		</ul>
+	</div>
+	<section class="content">
+
+		<div>
+			<table>
+				<form id="myForm" name="myForm">
+					<tr>
+						<td><label>
+								Enter Name</td>
+						<td>
+							<input type="text" name="name" id="name" onfocus="hasReturned()"></label></td>
+					</tr>
+					<tr>
+						<td><label>
+								Enter Password</td>
+						<td>
+							<input type="password" name="password" id="password">
+							</label></td>
+					</tr>
+					<tr>
+						<td>
+							<input type="button" name="submit" id="submit" value="Submit" onclick="checkCookie();">
+							<input type="reset" value="reset" onclick="window.location.reload();"></td>
+						<td>
+							<input type="button" value="Delete cookie" onclick="deleteCookie();">
+						</td>
+					</tr>
+					<div id="errorDisplay"> </div>
+				</form>
+			</table>
+
+		</div>
+
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

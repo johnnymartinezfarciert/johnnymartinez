@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<style>
+		.dots {
+			border-radius: 7px;
+			border-style: dotted;
+			padding: 20px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		td {
+			font-family: helvetica;
+			font-size: 18px;
+
+		}
+
+	</style>
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Homework 6 - Objects </h2>
+	</div>
+
+	<section class="content">
+
+		<div>
+			<table>
+				<tr>
+					<td> <a href="hw6_1.html"> Part 1 </a></td>
+					<td class="dots">
+						<p>Create a webpage that contains a script that has a function that uses
+							Math.round, Math.sqrt and Math.floor to: </p>
+						<ul style="none">
+							<li>a) round the floating-point number to the nearest integer</li>
+							<li>b) calculate the square root of the floating-point number and round it to an integer</li>
+							<li>c) round the floating-point number to the nearest tenths position</li>
+							<li>d) round the floating-point number to the nearest hunderdths position</li>
+							<li>e) round the floating-point number to the nearest thousandths position</li>
+						</ul>
+						<p>Your page should allow entering a floating-point number with at least 4 decimal
+							positions. Your script should display the original floating-point number, the
+							number rounded to the nearest integer, the square root of the number that is
+							then rounded to an integer, the number rounded to the nearest tenth, the number
+							rounded to the nearest hundredth, and the number rounded to the nearest
+							thousandth. Be sure to use parseFloat() for the inputted number. Use a form
+							input box for user input and a textarea to display the output. When displaying
+							the output, be sure to use toFixed() for displaying the number to the nearest
+							tenths, hundredths, and thousandths postions. Validate the input and display
+							an error message if the input is invalid. </p>
+					</td>
+				</tr>
+				<tr>
+					<td> <a href="hw6_2.html"> Part 2 </a> </td>
+					<td>
+						<p>Create a webpage that contains a script using a form that allows the user to input several lines of text and a search character and uses the String method charAt to determine the number of occurrences of the search character within the text. Use a form textarea for the text and a form input box for the search character. If the search character is found within the text, display the number of occurrences of the search character in another form input box or a textarea. If the search character is not found within the text then display within a new window (using the window.open method), the message, 'Search character not found in text string!' along with the search character. Your new window should be a width of 300 pixels, height of 100 pixels, and should not obscure any of the main content already on the page.
+						</p>
+					</td>
+
+				</tr>
+				<tr>
+					<td> <a href="hw6_3.html">Part 3 </a> </td>
+					<td class="dots">
+						<p>Create a webpage that does the following:<br></p>
+						<p>
+							1. Using toString(), toLocaleString() and toUTCString() for the Date object,
+							write the current date and time in these 3 formats. Using the
+							getTimezoneOffset(), write the hours difference between PST or PDT
+							(Pacific Standard Time or Pacific Daylight Time) and UTC, and the
+							hours difference between EST or EDT (Eastern Standard Time or Eastern
+							Daylight Time) and UTC. Note: EST is 3 hours ahead of PST
+							(Pacific Standard Time). Here is a helpful link for the Date Object
+							(Links to an external site.)Links to an external site.. Note that for EDT
+							(Eastern Daylight Time), the hours difference between EDT and UTC changes
+							by one hour.
+
+							2. Input a telephone number as a string in the format (999) 999-9999.
+							The script should use String method split to extract the area code as a token,
+							the first 3 digits of the phone number as a token, and the last 4 digits of
+							the phone number as a token. Display the area code in one text field and the
+							seven-digit phone number in another text field. I suggest that you use the
+							jQuery mask for input. Be sure to display the desired format for the phone
+							number, e.g., (999) 999-9999.</p>
+					</td>
+				</tr>
+				<tr>
+					<td><a href="hw6_4.html"> Part 4 </a> </td>
+					<td>
+						<p>
+							Write a script that inputs several lines of text in a form textarea
+							and uses String method indexOf to determine the total number of
+							occurrences of each letter of the alphabet in the text. Uppercase
+							and lowercase letters should be counted together, e.g., 'A' and 'a'
+							would count as 2 occurences of the same letter (use toLowerCase()
+							or toUpperCase()). Store the totals for each letter in an array,
+							and print the values in a vertical form textarea after the totals
+							have been determined.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td> <a href="hw6_ec.html">Extra Credit</a> </td>
+					<td class="dots">
+						<p>
+							Create a webpage that contains form input password fields for the
+							user's name and password and a submit and reset button.<br>
+							1. The user should enter an incorrect username and/or password and click the submit button, which should call a validation script function that should alert an error message and then stay on the current page.
+							<br>
+							2. Then the user should enter the correct username and password and click the submit button which will again call the validation script function and do the following:
+							<br>
+							<ul style="none">
+								<li>a. alert a message that the username and password are correct.
+								</li>
+								<li>
+									b. call a script function that will set a cookie for the username of rosebud. (set the cookie to expire in 30 days)
+								</li>
+								<li>
+									c. transfer location to another webpage.
+								</li>
+							</ul>
+							<br>
+							B. When the user returns to the original page within 30 days with the cookie already set, then, when the user clicks in the username form field, use onfocus to call a script function that will:
+
+							1. call a function to check whether the username cookie has been set to rosebud. If so,
+							<ul style="none">
+								<li>
+									a. alert the welcome message, 'Welcome again rosebud'.
+								</li>
+								<li>
+									b. automatically display the username of rosebud and the password of komodo in the form input fields.
+								</li>
+							</ul>
+							<br>
+							2. click the submit button to ensure that the validation of username and password are correct.
+							<br>
+							Note that when testing this problem it will be necessary at times to delete cookies from your browser by using a form button that calls a function to delete cookies. For the password field, be sure to use input type="password" so that asterisks are displayed in that field when entered by the user.
+							Some people have found it necessary to test this problem on the server rather than the client.
+						</p>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

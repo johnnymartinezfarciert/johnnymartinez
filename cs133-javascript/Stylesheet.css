@@ -1,0 +1,251 @@
+body,
+h1,
+h2,
+h3,
+h4,
+	{
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/*the above is a very basic reset rule.  Every browser has a slightly different default for HTML tags.  By using this simple CSS reset, all the more glaring styles
+		are reset and can now be set to whatever properties that would suit your website best. */
+
+body {
+	margin: 30px auto;
+	padding: 0px;
+	width: auto;
+	height: auto;
+	background-color: #aebeca;
+	font-family: "Helvetica";
+
+}
+
+.heading {
+	text-align: center;
+}
+
+.heading h1 {
+	margin: -10px;
+	padding: 0;
+	font-family: courier new;
+}
+
+.heading h3 {
+	padding-bottom: 10px;
+}
+
+nav a {
+	text-align: center;
+	padding: 5px 10px 5px 10px;
+	margin: 0px auto;
+	border: 1px solid;
+	border-radius: 8px;
+	background-color: aliceblue;
+	color: darkslategray;
+	font-weight: 600;
+}
+
+nav {
+	margin: 0px auto;
+	text-align: center;
+	padding-bottom: 2rem;
+
+}
+
+
+.pageheading {
+	text-align: center;
+	margin: auto;
+	font-family: courier new;
+}
+
+a {
+	color: white;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #aebeca;
+}
+
+
+.content {
+	/*  width:800px; height: auto;*/
+	margin: 0px auto;
+	padding: 10px;
+	text-align: left;
+	border: 4px #333;
+	border-style: outset;
+	background-color: #eee;
+	font-family: "Helvetica";
+}
+
+table {
+	width: auto;
+	margin: 0px auto;
+	border: 6px outset;
+	padding: 9px;
+	background-color: #333;
+	border-color: darkgrey;
+	margin-bottom: 30px;
+	color: white;
+}
+
+.solution {
+	width: auto;
+	border: 1px dashed;
+	margin: 0px auto;
+	padding: 5px;
+	background-color: #aebeca;
+	color: black;
+	font-size: 1.12em;
+
+}
+
+pre,
+code {
+	font-family: monospace, monospace;
+}
+
+pre {
+	overflow: auto;
+	overflow: hidden;
+	resize: horizontal;
+	min-width: 100%
+}
+
+pre > code {
+	display: block;
+	padding: 1rem;
+	word-wrap: normal;
+}
+
+figure {
+  position: relative;
+}
+
+figcaption {
+  position: absolute;
+  top: 1.3rem;
+  left: 2.5rem;
+  font-size: small;
+  font-style: italic;
+  color: #6c5f7c;
+}
+
+
+ul li {
+	list-style-type: none;
+	padding: 7px;
+	display: inline-block;
+}
+
+p {
+	display: inline-block;
+}
+
+#center {
+	margin: auto 0px;
+	text-align: center;
+	padding: 10px;
+}
+
+td {
+	padding: 10px;
+	font-family: "Helvetica";
+	font-size: 17px;
+}
+
+#ab {
+	font-family: "Times New Roman";
+	color: red;
+	font-weight: bold;
+}
+
+#style12 {
+	font-family: "Arial";
+	color: blue;
+	font-weight: bold;
+}
+
+#style34 {
+	font-family: "Impact";
+	color: green;
+	font-weight: bold;
+	font-style: italic;
+}
+
+h3 {
+	text-align: center;
+}
+
+#panel,
+#flip {
+	padding: 5px;
+	text-align: center;
+	background-color: #e5eecc;
+	border: solid 1px #c3c3c3;
+
+}
+
+#panel {
+	padding: 50px;
+	display: none;
+}
+
+ul #none {
+	text-align: center;
+	margin: 0px auto;
+	padding: 5px;
+	display: inline-block;
+}
+
+label {
+	display: inline-block;
+}
+
+#hw3 {
+	text-align: center;
+}
+
+input {
+	text-align: right;
+}
+
+#tabs li a {
+	color: #362da5;
+}
+
+#tabs a:hover {
+	color: #20812f;
+}
+
+#long {
+	width: 300px;
+}
+
+footer {
+	clear: both;
+	margin: 0px auto;
+	text-align: center;
+}
+
+#result {
+	padding: 15px;
+	width: 200px;
+}
+
+#partsNav {
+	margin: 0px auto;
+	text-align: center;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+#center a {
+	padding: 10px;
+	padding-bottom: 20px;
+}

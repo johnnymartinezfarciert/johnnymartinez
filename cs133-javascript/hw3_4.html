@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<script src="hw3Script.js"></script>
+	<script>
+		/* part 4 */
+		/*
+		  A palindrome is a number or a text phrase that reads the same backward and forward.
+		  For example: 12321, 55555, 11611, 45554. Create a webpage that contains a script that
+		  reads in a five-digit integer (not starting with zero) that determines and outputs a
+		  message stating whether or not it's a palindrome. If the number is not five digits long,
+		  display an alert indicating the problem to the user.
+		*/
+		function process() {
+			LetterAmountAllowed = 5;
+			beginCheck = 0;
+			palindromeValue = document.getElementById("palindromeValue").value;
+			panlidromeHalfLength = Math.floor(palindromeValue.length);
+			panlidromeLastCharacter = palindromeValue.length - 1;
+
+			if (palindromeValue.length != LetterAmountAllowed) {
+				alert("Your palindrome can only be 5 characters.");
+			} else if (palindromeValue.charAt(0) == "0") {
+				alert("Your palindrome cannot begin with a 0.");
+			} else {
+				beginCheck = 1;
+			}
+
+			if (beginCheck == 1) {
+				for (count = 0; count <= panlidromeHalfLength; count++) {
+					if (palindromeValue.charAt(count) != palindromeValue.charAt(panlidromeLastCharacter)) {
+						beginCharDigit = count + 1;
+						endCharDigit = panlidromeLastCharacter + 1;
+						alert("This is not a palidrome! Character digit " + beginCharDigit + " is not the same as the character digit " + endCharDigit);
+						exit();
+					}
+					panlidromeLastCharacter--;
+				}
+				alert("This is a palindrome");
+			}
+
+		}
+
+		/* ]]> */
+
+	</script>
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<section class="content">
+		<div id="tabs">
+			<ul>
+				<li><a href="hw3_1.html">Part 1</a></li>
+				<li><a href="hw3_2.html">Part 2</a></li>
+				<li><a href="hw3_3.html">Part 3</a></li>
+				<li><a href="hw3_4.html">Part 4</a></li>
+				<li><a href="hw3_5.html">Part 5 </a></li>
+				<li><a href="hw3_6.html">Part 6 </a></li>
+				<li><a href="hw3_ec.html">Extra Credit </a></li>
+			</ul>
+
+			<div>
+				<h3> Palindrome </h3>
+				<hr>
+				<p>
+					<u>Part 4</u><br />
+					Input any number to check if it's a panlindrome.
+				</p>
+
+				<script type="text/javascript">
+
+				</script>
+
+				<form id="palindrome" action="">
+					<input type="text" id="palindromeValue" />
+					<input type="button" onclick="process()" value="Submit" />
+					<input type="reset" value="Reset" />
+				</form>
+
+
+				<br />
+
+			</div>
+
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<HTML lang ="en">
+
+<head>
+
+<title> CNIT 133 HomeWork Homepage </title>
+
+<meta charset="utf-8">
+<style>
+.dots {
+	border-radius: 7px;
+	border-style: dotted;
+	padding: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+td {
+	font-family: helvetica;
+	font-size: 18px;
+
+}
+</style>
+<link rel="Stylesheet" href="Stylesheet.css">
+<script>
+function showHint(str) {
+  if (str.length == 0) {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  } else {
+    var xmlhttp = new XMLHttpRequest();
+    //create the function to be executed when the server response is ready
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("txtHint").innerHTML = this.responseText;
+      }
+    };
+    // send the request off to a PHP file (gethint.php) on the server
+    // notice that q parameter is added to the url(gethint.php?q=+str)
+    // str varable holds the content of the input field
+    xmlhttp.open("GET", "gethint.php?q=" + str, true);
+    xmlhttp.send();
+  }
+}
+</script>
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>b
+
+<div class = "pageheading">
+	<h2> Homework 8 Part 1 </h2>
+</div>
+
+<section class="content">
+
+<div>
+  <p><b>Start typing a name in the input field below:</b></p>
+  <form>
+  First name: <input type="text" onkeyup="showHint(this.value)">
+  </form>
+  <p>Suggestions: <span id="txtHint"></span></p>
+
+</div>
+
+</section>
+
+<footer>
+</footer>
+</body>
+
+</html>

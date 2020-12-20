@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+<title> STOP GO </title>
+
+<style>
+body {
+  background-color: blue;
+}
+div {
+  display: inline-block;
+}
+.red {
+    background-color: #CC0000;
+}
+.green {
+  background-color: green;
+}
+.orange {
+  background-color: orange;
+}
+
+.blue {
+  background-color: blue;
+}
+</style>
+
+
+<script>
+function red() {
+  var body = document.getElementById("body");
+    body.className="red";
+}
+function green() {
+  var body = document.getElementById("body");
+  body.className="green";
+}
+function orange() {
+  var body = document.getElementById("body");
+  body.className="orange";
+}
+
+function blue(){
+  var body = document.getElementById("body");
+  body.className="blue";
+}
+</script>
+</head>
+<body id=body>
+<section id="changeColor">
+<div >
+  <h1 onmouseOver="red()" onmouseout="blue()"> STOP </h1>
+  <h1 onmouseover="orange()" onmouseout="blue()"> CAUTION </h1>
+  <h1 onMouseOver="green()" onmouseout="blue()"> GO  </h1>
+
+</div>
+</section>
+
+</body>
+</html>

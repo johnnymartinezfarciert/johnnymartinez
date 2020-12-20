@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<style>
+	</style>
+
+	<script type="text/javascript">
+		function productNumber() {
+			for (var i = 1; i <= 5; i++) {
+				var product = "product" + i;
+
+				document.getElementById(product).innerHTML = i;
+			}
+		}
+
+		function amountSold() {
+			var totalSum = 0;
+
+			for (var i = 1; i <= 5; i++) {
+				var quantity = "quantity" + i;
+				var sold = "sold" + i;
+
+				var price;
+				var quantitySold = document.getElementById(quantity).value;
+
+				if (isNaN(parseFloat(quantitySold))) {
+					document.getElementById("result").innerHTML = "<td class='result-hw4' colspan='4'>Please finish entering the data.</td>";
+					if (isNaN(quantitySold)) {
+						document.getElementById("result2").innerHTML = "<td class='result-hw4' colspan='4'>Invalid Input. Please input a numeric value.</td>";
+					}
+				} else {
+					switch (i) {
+						case 1:
+							price = 2.98;
+							break;
+						case 2:
+							price = 4.50;
+							break;
+						case 3:
+							price = 9.98;
+							break;
+						case 4:
+							price = 4.49;
+							break;
+						case 5:
+							price = 6.87;
+							break;
+					}
+
+					var amount = price * parseInt(quantitySold, 10);
+					document.getElementById(sold).value = "$" + amount.toFixed(2);
+
+					totalSum += amount;
+					document.getElementById("total").value = "$" + totalSum.toFixed(2);
+				}
+			}
+		}
+
+	</script>
+
+
+
+
+
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Homework 4 </h2>
+	</div>
+
+	<section class="content">
+		<div id="tabs">
+			<ul>
+				<li><a href="hw4_1.html">Part 1</a></li>
+				<li><a href="hw4_2.html">Part 2</a></li>
+				<li><a href="hw4_3.html">Part 3</a></li>
+				<li><a href="hw4_4.html">Part 4</a></li>
+				<li><a href="hw4_5.html">Part 5 </a></li>
+				<li><a href="hw4_6.html">Part 6 </a></li>
+				<li><a href="hw4_ec.html">Extra Credit </a></li>
+			</ul>
+		</div>
+		<section>
+			<h3> Part 4 </h3>
+			<form>
+				<table>
+					<tr>
+						<th>Product</th>
+						<th>Price</th>
+						<th>Quantity Sold</th>
+						<th>Amount</th>
+					</tr>
+					<tr>
+						<td id="product1"></td>
+						<td>$2.98</td>
+						<td><input type="text" id="quantity1"></td>
+						<td><input type="text" id="sold1" disabled="disabled"></td>
+					</tr>
+					<tr>
+						<td id="product2"></td>
+						<td>$4.50</td>
+						<td><input type="text" id="quantity2"></td>
+						<td><input type="text" id="sold2" disabled="disabled"></td>
+					</tr>
+					<tr>
+						<td id="product3"></td>
+						<td>$9.98</td>
+						<td><input type="text" id="quantity3"></td>
+						<td><input type="text" id="sold3" disabled="disabled"></td>
+					</tr>
+					<tr>
+						<td id="product4"></td>
+						<td>$4.49</td>
+						<td><input type="text" id="quantity4"></td>
+						<td><input type="text" id="sold4" disabled="disabled"></td>
+					</tr>
+					<tr>
+						<td id="product5"></td>
+						<td>$6.87</td>
+						<td><input type="text" id="quantity5"></td>
+						<td><input type="text" id="sold5" disabled="disabled"></td>
+					</tr>
+					<tr>
+						<td colspan="2">Total Amount Sold</td>
+						<td colspan="2" class="right"><input size="50" type="text" id="total" disabled="disabled"></td>
+					</tr>
+					<tr class="button">
+						<td colspan="4" class="extra-button right">
+							<input type="button" onclick="amountSold()" value="Submit">
+							<input type="reset" value="Reset" onclick="location.reload();">
+						</td>
+					</tr>
+					<tr id="result"></tr>
+					<tr id="result2"></tr>
+				</table>
+			</form>
+		</section>
+	</section>
+
+
+	<footer>
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

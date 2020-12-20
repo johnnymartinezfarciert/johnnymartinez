@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<HTML lang ="en">
+
+<head>
+
+<title> CNIT 133 HomeWork Homepage </title>
+
+<meta charset="utf-8">
+<link rel="Stylesheet" href="Stylesheet.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="http://fog.ccsf.edu/~srubin/jquery.js"></script>
+	<script type="text/javascript" src="http://fog.ccsf.edu/~srubin/validate.js"></script>
+<style>
+ol ul {
+
+}
+</style>
+<script>
+$(document).ready(function(){
+			$("#flip").click(function(){
+				$("#instructions").slideToggle("slow");
+			});
+		});
+
+		$(document).ready(function(){
+			$("#myform").validate({
+				// Rules for each input item
+				rules:
+				{
+					number: { required: true, number: true, min: 1, max: 3}
+
+				}
+			});
+		});
+
+		function displayList()
+		{
+			var listStart = "";
+			var listEnd = "";
+			var output = "";
+
+			if ($("#myform").valid())
+			{
+				var num = parseInt(document.getElementById("number"));
+
+				switch (num)
+				{
+					case 1:
+						listStart = "<ul style='list-style-type: square;'>";
+						listEnd = "</ul>";
+						break;
+					case 2:
+						listStart = "<ol>";
+						listEnd = "</ol>";
+						break;
+					case 3:
+						listStart = "<ol style='list-style-type: upper-alpha;'>";
+						listEnd = "</ol>";
+						break;
+				}
+
+				output = listLoop(listStart, listEnd);
+
+				document.getElementById("result").innerHTML = output;
+			}
+		}
+
+		function listLoop(listStart, listEnd)
+		{
+			var output = "";
+
+			output += listStart;
+
+			for(var i = 1; i <=3; i++)
+			{
+				output += "<li>List item" + i + "</li>";
+			}
+
+			output += listEnd;
+
+			return output;
+		}
+</script>
+
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+<div class = "pageheading">
+	<h2> Homework 4 </h2>
+</div>
+
+<section class="content">
+<div id="tabs">
+  <ul style="display">
+  <li><a href="hw4_1.html">Part 1</a></li>
+  <li><a href="hw4_2.html">Part 2</a></li>
+  <li><a href="hw4_3.html">Part 3</a></li>
+  <li><a href="hw4_4.html">Part 4</a></li>
+  <li><a href="hw4_5.html">Part 5 </a></li>
+  <li><a href="hw4_6.html">Part 6 </a></li>
+  <li><a href="hw4_ec.html">Extra Credit </a></li>
+  </ul>
+</div>
+	<section>
+    <h3> Part 5 </h3>
+    <div id="flip"> click to show/hide instructions </div>
+    <div id="instructions">
+      <p> enter 1, 2 or 3 to select a style of list </p>
+      <p>1 = unordered list </p>
+      <p>2 = ordered numerical </p>
+      <p>3 = ordered alphabetical </p>
+    </div>
+    
+    <div>
+      <form id ="myform" class="myform">
+        <table>
+    <tr><td>  <input type="text" id="number" name="number"> </td></tr>
+      <tr><td> <input type="button" onclick="displayList()" value="Submit">
+        <input type="button" value="Reset" onclick="location.reload();"> </td>
+    </table>
+    <div>
+      <section id="result" class="listBox"> </section>
+    </div>
+    </form>
+    </div>
+
+  </section>
+</section>
+
+
+<footer>
+	<p>
+	 <script type="text/javascript">
+			var dateModified = document.lastModified;
+			 mydate = dateModified.slice(0,16);
+			 document.write("Last updated: " + mydate);
+	</script>
+	<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+	<a href="https://jigsaw.w3.org/css-validator/check/referer">
+			<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+	</a>
+
+	</p>
+</footer>
+</body>
+
+</html>

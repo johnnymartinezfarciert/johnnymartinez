@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+
+	<script>
+		function process()
+
+		{
+			var numbers = [{}, {}, {}, {}, {}],
+				negativeCount = 0,
+				equalZeroCount = 0,
+				positiveCount = 0,
+				displayArr = "";
+
+			for (i = 0; i < numbers.length; ++i) {
+
+				numbers[i] = parseInt(document.getElementById('num' + i).value);
+
+				if (numbers[i] < 0) {
+					negativeCount++;
+				} else if (numbers[i] == 0) {
+					equalZeroCount++;
+				} else {
+					positiveCount++;
+				}
+				// get product of array elements
+				displayArr += (numbers[i] + " ") // ready array elements for displaying in textarea
+			}
+
+
+			// Display the entered numbers, and other results
+
+			document.forms["myform"].elements["result"].value = ("The inputted numbers were " + displayArr +
+				"\nThere were " + negativeCount + " negative integers " +
+				"\nThere were " + equalZeroCount + " integers = 0" +
+				"\nThere were " + positiveCount + " positive intergers")
+
+		}
+
+	</script>
+
+	<!-- the following uses jquery to hide the instructions of the problem -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			$("button").click(function() {
+				$("textarea").fadeTo("slow", 0.25);
+			});
+		});
+
+	</script>
+</head>
+
+<body>
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+
+	<section class="content">
+
+		<div>
+			<h3> Part 3 </h3>
+
+			<form id="myform" name="myform">
+
+				<table>
+					<tr>
+						<td>First Number:</td>
+						<td><input type="number" name="num0" id="num0" size="6" value="0"></td>
+
+						<td>Second Number:</td>
+						<td><input type="number" id="num1" name="num1" size="6" value="0"></td>
+
+					</tr>
+
+					<tr>
+
+						<!-- input type="number" will display up/down arrows -->
+
+						<td>Third Number:</td>
+						<td><input type="number" name="num2" id="num2" size="6" value="0"></td>
+
+						<td>Fourth Number:</td>
+						<td><input type="number" id="num3" name="num3" size="6" value="0"></td>
+
+					</tr>
+					<tr>
+						<td>Fith Number:</td>
+						<td><input type="number" id="num4" name="num4" size="6" value="0"></td>
+
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>Results: </td>
+						<td> <textarea rows="7" cols="40" name="result"></textarea></td>
+					</tr>
+				</table>
+				<br>
+
+				<input type="button" onclick="process()" value="SUBMIT">
+
+				<input type="reset" value="RESET" onclick="document.getElementById('num0').focus();"><br><br>
+			</form>
+
+
+			<button type="button">Click to fade results</button>
+		</div>
+
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

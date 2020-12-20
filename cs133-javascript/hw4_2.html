@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<style>
+	</style>
+
+</head>
+
+<body>
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Homework 4 </h2>
+	</div>
+
+	<section class="content">
+		<div id="tabs">
+			<ul>
+				<li><a href="hw4_1.html">Part 1</a></li>
+				<li><a href="hw4_2.html">Part 2</a></li>
+				<li><a href="hw4_3.html">Part 3</a></li>
+				<li><a href="hw4_4.html">Part 4</a></li>
+				<li><a href="hw4_5.html">Part 5 </a></li>
+				<li><a href="hw4_6.html">Part 6 </a></li>
+				<li><a href="hw4_ec.html">Extra Credit </a></li>
+			</ul>
+		</div>
+		<section>
+			<h3> Part 2 </h3>
+			<div>
+				<script>
+					function getGrossPay() {
+						var hours, rate, pay;
+
+						for (var i = 1; i <= 6; i++) {
+							var hoursIn = "hours" + i;
+							var rateIn = "rate" + i;
+							var grossOut = "gross" + i;
+
+							hours = document.getElementById(hoursIn).value;
+							rate = document.getElementById(rateIn).value;
+
+							if (isNaN(parseFloat(hours)) || isNaN(parseFloat(rate))) {
+								document.getElementById("result").innerHTML = "<td colspan='3'> Please enter all Employee Information. </td>";
+
+								if (isNaN(hours || rate)) {
+									document.getElementById("result2").innerHTML = "<td colspan='3'> Invalid Input. Enter only numbers </td>";
+								}
+							} else {
+								hours = parseFloat(hours);
+								rate = parseFloat(rate);
+
+								if (hours > 40) {
+									pay = (hours - 40) * 1.5 * rate + 40 * rate;
+								} else {
+									pay = hours * rate;
+								}
+								document.getElementById(grossOut).value = "$" + pay.toFixed(2);
+							}
+						}
+					}
+
+				</script>
+				<p>Input the number of hours worked and the hourly rate:</p>
+
+				<form>
+
+					<table>
+						<tr>
+							<th>Employee</th>
+							<th>Hours Worked</th>
+							<th>Hourly Rate</th>
+							<th>Gross Pay</th>
+						</tr>
+						<tr>
+							<td>Employee 1</td>
+							<td><input type="text" id="hours1"></td>
+							<td><input type="text" id="rate1"></td>
+							<td><input type="text" id="gross1" readonly> </td>
+						</tr>
+						<tr>
+							<td>Employee 2</td>
+							<td><input type="text" id="hours2"></td>
+							<td><input type="text" id="rate2"></td>
+							<td><input type="text" id="gross2"></td>
+						</tr>
+						<tr>
+							<td>Employee 3</td>
+							<td><input type="text" id="hours3"></td>
+							<td><input type="text" id="rate3"></td>
+							<td><input type="text" id="gross3"></td>
+						</tr>
+						<tr>
+							<td>Employee 4</td>
+							<td><input type="text" id="hours4"></td>
+							<td><input type="text" id="rate4"></td>
+							<td><input type="text" id="gross4"></td>
+						</tr>
+						<tr>
+							<td>Employee 5</td>
+							<td><input type="text" id="hours5"></td>
+							<td><input type="text" id="rate5"></td>
+							<td><input type="text" id="gross5"></td>
+						</tr>
+						<tr>
+							<td>Employee 6</td>
+							<td><input type="text" id="hours6"></td>
+							<td><input type="text" id="rate6"></td>
+							<td><input type="text" id="gross6"></td>
+						</tr>
+						<tr id="result"> </tr>
+						<tr id="result2"> </tr>
+
+
+					</table>
+					<input type="button" value="Submit" onclick="getGrossPay()">
+					<input type="reset" value="Reset" onclick="location.reload();"> <br> <br>
+
+				</form>
+			</div>
+		</section>
+
+	</section>
+
+	<footer>
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

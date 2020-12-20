@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<style>
+		#login {
+			width: 300px;
+			margin: 0px auto;
+			/*position: absolute;
+	left: 560px;
+	top: 6px;*/
+			/*z-index: 100;*/
+		}
+
+
+		#open {
+			margin: 0;
+			cursor: pointer;
+			background: rgb(255, 255, 255) url(open.png) no-repeat 8px 7px;
+			color: rgb(58, 80, 123);
+			padding: 5px 0 2px 30px;
+			width: 300px;
+		}
+
+		#login .close {
+			background-image: url(close.png);
+			background-color: rgb(110, 138, 195);
+		}
+
+		#open:hover {
+			color: rgb(0, 0, 0);
+			background-color: rgb(110, 138, 195);
+		}
+
+		#login form {
+			padding: 10px 10px 10px 10px;
+			display: none;
+			background-color: rgb(255, 255, 255);
+			width: 310px;
+		}
+
+		#login label {
+			display: inline-block;
+			width: 100px;
+			text-align: right;
+			margin: 0 15px 0 0;
+			color: rgb(58, 80, 123);
+		}
+
+		#login input {
+			font-size: 14px;
+		}
+
+		#login #button {
+			margin-left: 50px;
+		}
+
+		.body {
+			text-align: center;
+		}
+
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			// Attach a click handler to the element: <p id="open">
+			$("#open").click(function() {
+				// Save the <p id="open"> and <form> elements in local variables.
+				var openElem = $(this);
+				var loginForm = $("#login form");
+
+				if (loginForm.css("display") == "none") {
+					// If the form is currently not displayed,
+					// slide it down into view, and when done add the "close" class to the
+					// <p id="open"> element.
+					loginForm.slideDown(300, function() {
+						openElem.addClass("close");
+					})
+				} else {
+					// Otherwise, fade the login form out, and when done,
+					// remove the "close" class from the <p id="open"> element.
+					loginForm.fadeOut(600, function() {
+						openElem.removeClass("close");
+					})
+				}
+			});
+		}); // end ready
+
+	</script>
+	<script>
+		// function checkpass() is executed when the user clicks the form's submit button
+
+		function checkpass() {
+
+			// Set error msg and retrieve entered password from form
+			// Note that myform is the name of the form and pas is the name of the input password box
+
+			var errormsg = "Password is incorrect";
+			var pass = document.forms["myform"].elements["password"].value;
+
+			// Check is entered password = obama and if so, then alert "correct"
+			// Then change location to the form page named "pass.pl"
+
+			// else if entered password is not = obama then alert error msg
+			// and clear input password box and move cursor back to it
+
+			if (pass !== "obama") {
+
+				var htmlOutput = "<b style='color: red;'>Password is incorrect!</b>";
+				// Set the contents of the <div> block to the contents of htmlOutput
+				document.getElementById("errorMsg").innerHTML = htmlOutput;
+
+				document.forms["myform"].elements["password"].value = "";
+				document.forms["myform"].elements["password"].focus();
+				return false;
+			} else
+				window.location = "hw7_2passcor.html";
+		}
+
+		function res() {
+			document.getElementById("errorMsg").innerHTML = "";
+			document.forms["myform"].elements["password"].focus();
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Homework 7 - Part 2</h2>
+	</div>
+	<div id="partsNav">
+		<ul>
+			<li> <a href="hw7_1.html"> Part 1 </a> </li>
+			<li> <a href="hw7_2.html"> Part 2 </a> </li>
+			<li> <a href="hw7_3.html"> Part 3 </a> </li>
+			<li> <a href="hw7_4.html"> Part 4 </a> </li>
+			<li> <a href="hw7_ec.html"> Extra Credit </a> </li>
+		</ul>
+	</div>
+	<section class="content">
+
+		<div>
+			<h2> Password Protection Page </h2>
+			<p>The access to the form that you are seeking
+				is password-protected.<br /> Click the login button to bring up the password prompt.
+			</p>
+			<br />
+			<div id="login">
+				<p id="open">Login</p>
+
+
+
+
+				<form id="myform" name="myform" method="post">
+
+
+					<p>
+						<label for="password">Password:</label>
+						<input type="password" name="password" id="password">
+					</p>
+					<p>
+						<input type="button" name="button" id="button" value="Submit" onclick="checkpass();">
+						<input type="reset" value="Reset" onclick="res()">
+					</p>
+				</form>
+
+			</div>
+			<div id="errorMsg"> </div>
+		</div>
+
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 17);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

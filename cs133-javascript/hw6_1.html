@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<HTML lang ="en">
+
+<head>
+
+<title> CNIT 133 HomeWork Homepage </title>
+
+<meta charset="utf-8">
+<link rel="Stylesheet" href="Stylesheet.css">
+<style>
+#errOut {
+  color: red;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+</script>
+<script>
+  /*
+    When a user clicks button whose id=rountBtn then exectues the function roundNumber()
+    Clicking the reset button will clear the form and error message, if displayed
+    when the page first loads or reset is clicked then focus the cursor at the form input
+    field.
+  */
+  $(document).ready(function(){
+    $("#subButton").click(roundNumber);
+    $(":reset").click(function() {
+      $("#errOut").html("");
+      $("#number").focus();
+    });
+    $("#number").focus();
+  });
+
+  function roundNumber() {
+    var errMsg = " Invalid input" ;
+
+    /* using val() function to check the input field for numbers and if not
+    then display an error msg */
+     if (isNaN($("#number").val()) ||($("#number").val()) == "") {
+       $("#errOut").html(errMsg);
+     } else {
+       /* using the val() function to get input field value */
+       //use parseFloat()
+        var num = parseFloat($("#number").val());
+
+      /* using the val() function to displlay the output field value */
+      $("#output").val(
+        // display original floating point number,
+        "The entered number: " + num
+        // rounded to the nearest integer,
+        +"\n rounded to the nearest integer using math round: " + roundToIntegerRound(num)
+        // square root rounded to int,
+        +"\n square root rounded to the nearest integer using math round: " + roundToIntegerSqrt(num)
+        //round to nearest tenths
+        +"\n rounded to the nearest tenths positions using math round: " + roundToTenths(num)
+        //round to nearest hundreths
+        +"\n rounded to the nearest hundreths positions using math round: " + roundToHundreths(num)
+        // round to nearest thousandth
+        +"\n rounded to the nearest thousandths positions using math round: " + roundToThousandths(num)
+
+      );
+     }
+  }
+  function roundToThousandths(number) {
+    return (number.toFixed(3));
+  }
+  function roundToHundreths(number) {
+    return(number.toFixed(2));
+  }
+  function roundToIntegerRound(number) {
+    return(Math.round(number));
+  }
+
+  function roundToIntegerSqrt(number) {
+    return(Math.round(Math.sqrt(number)));
+  }
+
+  function roundToTenths(number) {
+    return( number.toFixed(1));
+  }
+</script>
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+<div class = "pageheading">
+	<h2> Homework 6 - Part 1 </h2>
+</div>
+<div id="partsNav">
+  <ul>
+    <li> <a href="hw6_1.html"> Part 1 </a> </li>
+    <li> <a href="hw6_2.html"> Part 2 </a> </li>
+    <li> <a href="hw6_3.html"> Part 3 </a> </li>
+    <li> <a href="hw6_4.html"> Part 4 </a> </li>
+    <li> <a href="hw6_ec.html"> Extra Credit </a> </li>
+  </ul>
+</div>
+<section class="content">
+
+<div>
+<div id="errOut"> </div>
+<form>
+  <table>
+<td><tr>
+<label>Enter a number with at least 4 decimal positions:  <input type="text" size="30" id="number" name="number">
+</td></tr>
+<tr><td>
+  <input type="button" value="Submit" id="subButton">
+   </td></tr>
+   <tr><td>
+  <textarea id="output" cols="80" rows="8">
+  </textarea>
+</tr></td>
+<tr><td>
+  <input type="reset" value="Reset">
+</tr></td>
+</table>
+</form>
+</div>
+
+</section>
+
+<footer>
+
+  <p>
+   <script type="text/javascript">
+      var dateModified = document.lastModified;
+       mydate = dateModified.slice(0,16);
+       document.write("Last updated: " + mydate);
+  </script>
+  <a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+  <a href="https://jigsaw.w3.org/css-validator/check/referer">
+      <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+  </a>
+
+  </p>
+</footer>
+</body>
+
+</html>

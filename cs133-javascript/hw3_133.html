@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Homework 2 </h2>
+	</div>
+
+	<section class="content">
+
+		<div>
+			<h3 id="center"> Homework 3 : Functions </h3>
+			<hr>
+			<table>
+				<tr>
+					<td><a href="hw3_1.html">Part 1: </a></td>
+					<td>
+						Create a webpage that contains the heading, Student Grades, and inputs a student's homework average, mid-term exam score, final exam score, and ACR (all as integers). Create a script that checks for valid input, i.e., that the input is between 0-100. If all input is valid then calculate and display the student's final average according to the formula:
+
+						final average = (.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * ACR)
+
+						Using form text boxes, display the student's final average (rounded to an integer) and final letter grade using the following:</td>
+				</tr>
+				<tr>
+					<td><a href="hw3_2.html">Part 2: </a></td>
+					<td>
+						Create a webpage that contains a script that includes at the top of your
+						form a text box for the salesperson's name for the user to enter. When
+						the user's mouse hovers over this name field, use the jQuery UI
+						tooltip coding to display the message "Please make sure that the
+						salesperson's name is spelled correctly".
+						Next input that salesperson's items sold for last week, calculates
+						how much the salesperson sold and how much they earned,
+						and then output the results. Be sure to round the outputted results
+						to 2 decimal places. Use form text boxes to input the number sold
+						for each of the items 1-4. You should also check for valid numeric
+						input and right-justify all amounts. </td>
+				</tr>
+				<tr>
+					<td><a href="hw3_3.html">Part 3: </a></td>
+					<td>
+						Create a webpage containing a script that will determine whether a
+						department-store customer has exceeded the credit limit on their charge
+						account.
+					</td>
+				</tr>
+				<tr>
+					<td><a href="hw3_4.html">Part 4: </a></td>
+					<td>
+						A palindrome is a number or a text phrase that reads the same backward
+						and forward. For example: 12321, 55555, 11611, 45554. Create a webpage
+						that contains a script that inputs a five-digit integer (not starting
+						with zero) that determines and outputs a message stating whether or
+						not it's a palindrome. If the number is not five digits long,
+						display an error message indicating the problem to the user.
+						Utilize jQuery UI for displaying a button that will be used to
+						display the instruction: "Input a five-digit integer (not starting
+						with zero) to display if it is a palindrome, not a palindrome, or
+						an input error."
+					</td>
+				</tr>
+				<tr>
+					<td><a href="hw3_5.html">Part 5 </a></td>
+					<td>
+						Create a webpage using form text boxes that:
+
+						a) contains the function celsius, that returns the Celsius equivalent of a
+						Fahrenheit temperature, using the calculation:
+
+						C = 5/9 * (F - 32)
+
+						b) contains the function fahrenheit that returns the Fahrenheit equivalent of
+						a Celsius temperature, using the calculation:
+
+						F = (9/5 * C) + 32
+
+						c) Use these functions to write a script that enables the user to enter either
+						a Fahrenheit or a Celsius temperature and displays the Celsius or Fahrenheit equivalent.
+					</td>
+				</tr>
+				<tr>
+					<td><a href="hw3_6.html">Part 6 </a></td>
+					<td>
+						Use Math.random to produce two one-digit integers (0-9). It should then display a question such as:
+
+						How much is 6 times 7?
+
+						The student then types the answer into a text field. Your program checks the student's answer. If it is correct, display the string "Very good!" in an alert or directly on the page, and then prompt the user to see whether they wish to continue by using the confirm statement. If true, then generate a new question. If not, then exit the script.
+
+						If the answer to the multiplication question is wrong, display the string
+						"No. Please try again." in an alert or directly on the page, and let the
+						student try the same question again repeatedly until the student finally gets
+						it right. A separate function should be used to generate each new question.
+						This function should be called once when the script begins execution and
+						each time the user answers the question correctly. Note that whether the
+						answer is correct or not, you should clear the answer box after the
+						question is answered.
+					</td>
+				</tr>
+			</table>
+		</div>
+
+	</section>
+
+	<footer>
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

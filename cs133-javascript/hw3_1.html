@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<HTML lang ="en">
+
+<head>
+
+<title> CNIT 133 HomeWork Homepage </title>
+
+<meta charset="utf-8">
+<link rel="Stylesheet" href="Stylesheet.css">
+<script src="hw3Script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+</script>
+
+
+
+
+
+</head>
+
+<body>
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+	
+
+<section class="content">
+<div id="tabs">
+  <ul>
+  <li><a href="hw3_1.html">Part 1</a></li>
+  <li><a href="hw3_2.html">Part 2</a></li>
+  <li><a href="hw3_3.html">Part 3</a></li>
+  <li><a href="hw3_4.html">Part 4</a></li>
+  <li><a href="hw3_5.html">Part 5 </a></li>
+  <li><a href="hw3_6.html">Part 6 </a></li>
+  <li><a href="hw3_ec.html">Extra Credit </a></li>
+  </ul>
+	<div>
+		<h3> Student Grades </h3>
+		<hr>
+    <div id="flip"><h4>Click to show/hide instructions </h4></div>
+    <div id="panel">The following webpage contains the heading, Student Grades, and uses
+      a script that inputs a student's homework average, mid-term exam score, final exam score
+      and ACR ( all as integers).Calculate the students final average according to the formula
+      final average = (.5 * HwAvg) + (.2 * midterm) + (.2 * final) + (.1 * acr)</div>
+    <form name ="myForm">
+      <table>
+        <tr> <td> Homework Average : </td> <td><input name="HwAvg" type="text"></td> </tr>
+        <tr> <td> mid-term exam score : </td> <td><input name="midterm" type="text"> </td> </tr>
+        <tr><td> Final exam score : </td> <td><input name="final" type="text"> </td> </tr>
+        <tr><td> ACR : </td> <td><input name="acr" type="text"></td></tr>
+        <tr><td><input type="button" value="Calculate" onclick ="getFinalAvg()"></td></tr>
+        <tr><td> Final Average </td> <td><input name="result" type="text"></td></tr>
+        <tr><td> Final Grade </td> <td> <input name="letter" type="text"></td></tr>
+      </table>
+    </form>
+  </div>
+
+</div>
+</section>
+
+<footer>
+	<p>
+	 <script type="text/javascript">
+			var dateModified = document.lastModified;
+			 mydate = dateModified.slice(0,16);
+			 document.write("Last updated: " + mydate);
+	</script>
+	<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+	<a href="https://jigsaw.w3.org/css-validator/check/referer">
+			<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+	</a>
+
+	</p>
+</footer>
+</body>
+
+</html>

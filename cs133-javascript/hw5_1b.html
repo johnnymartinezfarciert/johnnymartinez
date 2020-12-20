@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<style>
+		/* .error class is used for styling the error msg */
+		.error {
+			font: 12px arial;
+			padding: 3px;
+			margin: 3px;
+			color: red;
+		}
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+	<script>
+		// two pull down menus first one on change event handler. The sceond a button with a onclick event handelre
+		//to navigate to a page after an option is selected. each puelldown enu should incude at leatst  url pages.
+
+		// this function sends the user to a new page destination through the id myForm and the select element named destionationList
+		function newDestination(myForm) {
+			var destination =
+				myForm.destinationList.options[myForm.destinationList.selectedIndex].value;
+			window.location = destination;
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+
+		<h2> Part 1b </h2>
+	</div>
+	<div id="partsNav">
+		<ul>
+			<li> <a href="hw5_1a.html"> Part 1a </a> </li>
+			<li> <a href="hw5_1b.html"> Part 1b </a> </li>
+			<li> <a href="hw5_2.html"> Part 2 </a> </li>
+			<li> <a href="hw5_3.html"> Part 3 </a> </li>
+			<li> <a href="hw5_4.html"> Part 4 </a> </li>
+		</ul>
+	</div>
+	<section class="content">
+		<form>
+			<h4> This form uses onChange event handler </h4>
+			<select name="destinationList" onChange="newDestination(this.form);">
+				<option> -- Choose your Destination </option>
+				<option value="http://www.nasa.gov"> Nasa </option>
+				<option value="http://www.CCSF.edu"> CCSF Homepage </option>
+				<option value="http://www.archive.org"> Internet Archive </option>
+			</select>
+		</form>
+		<br> <br>
+		<form>
+			<h4> This form uses onClick event handler </h4>
+			<select name="destinationList">
+				<option value="http://www.nasa.gov"> Nasa </option>
+				<option value="http://www.CCSF.edu"> CCSF Homepage </option>
+				<option value="http://www.archive.org"> Internet Archive </option>
+			</select>
+			<input type="button" value="GO!" onClick="newDestination(this.form);">
+		</form>
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

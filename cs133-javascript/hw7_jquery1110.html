@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<style>
+		h2 {
+			background: url(open.png) no-repeat 0 11px;
+			padding-left: 25px;
+			cursor: pointer;
+		}
+
+		h2.close {
+			background-image: url(close.png);
+		}
+
+		.answer {
+
+			margin-left: 28px;
+		}
+
+	</style>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			$('.answer').hide();
+
+			// Attach a click handler to the h2 elements.
+			$(".main h2").click(function() {
+				//Save the h2 element that was clicked
+				// as well as the following answer element.
+				var h2 = $(this);
+				var answer = h2.next(".answer");
+
+				if (answer.css("display") == "none") {
+					//if the answer is currently no displayed
+					// display it with a sliding down motion
+					// when done ass the "close" class to the h2 element.
+					answer.slideDown(function() {
+						h2.addClass("close");
+					});
+				} else {
+					// otherwise, fade the answer out, and when done,
+					// remove the "close" class from the h2 element.
+					answer.fadeOut(function() {
+						h2.removeClass("close");
+					});
+				}
+			});
+		}); // end ready
+
+	</script>
+
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h1> Homework 7 </h1>
+	</div>
+
+	<section class="content">
+
+		<div class="main">
+			<h2> Part 1</h2>
+			<div class="answer">
+				<p> <a href="hw7_1.html">Link to part 1 </a> </p>
+			</div>
+
+			<h2> Part 2</h2>
+			<div class="answer">
+				<p> </p>
+			</div>
+
+			<h2> Part 3</h2>
+			<div class="answer">
+				<p> </p>
+			</div>
+
+			<h2> Part 4</h2>
+			<div class="answer">
+				<p> </p>
+			</div>
+
+
+		</div>
+
+	</section>
+
+	<footer>
+	</footer>
+</body>
+
+</html>

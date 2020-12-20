@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<style>
+		.dots {
+			border-radius: 7px;
+			border-style: dotted;
+			padding: 20px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		td {
+			font-family: helvetica;
+			font-size: 18px;
+
+		}
+
+	</style>
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		$(function() {
+			$("#datepicker").datepicker();
+		});
+
+	</script>
+	<script>
+		function getVote(int) {
+			if (window.XMLHttpRequest) {
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else { // code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("poll").innerHTML = this.responseText;
+				}
+			}
+			xmlhttp.open("GET", "poll_vote.php?vote=" + int, true);
+			xmlhttp.send();
+		}
+
+	</script>
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Homework 8 Part 3 </h2>
+	</div>
+
+	<section class="content">
+
+		<div>
+
+			<div id="poll">
+				<h3>Do you like PHP and AJAX so far?</h3>
+				<form>
+					Yes:
+					<input type="radio" name="vote" value="0">
+					<br>No:
+					<input type="radio" name="vote" value="1">
+					<br> Date: <input type="text" id="datepicker">
+					<br>
+					<input type="button" value="Submit" onclick="getVote(vote.value)">
+				</form>
+			</div>
+		</div>
+
+	</section>
+
+	<footer>
+	</footer>
+</body>
+
+</html>

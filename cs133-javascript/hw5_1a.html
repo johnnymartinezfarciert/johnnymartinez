@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<HTML lang ="en">
+
+<head>
+
+<title> CNIT 133 HomeWork Homepage </title>
+
+<meta charset="utf-8">
+<link rel="Stylesheet" href="Stylesheet.css">
+<style>
+ /* .error class is used for styling the error msg */
+ .error {
+   font: 12px arial;
+   padding: 3px;
+   margin: 3px;
+   color: red;
+ }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+<script>
+
+// ready validation for form
+
+$(document).ready(function(){
+
+$("#myform").validate({
+
+		messages: {
+			name: "Please enter your name",
+                        rating: "Please choose a food",
+                        sport: "Please choose at least one sport",
+                        occ: "Please choose an occupation",
+	    },
+
+/* the following is needed to place an error msg after the radio and checkbox elements */
+
+errorPlacement: function(error, element) {
+if ( element.is(":radio") || element.is(":checkbox")) {
+error.appendTo( element.parent());
+} else {
+error.insertAfter(element);
+}
+} // end errorPlacement
+
+});
+
+});
+</script>
+
+
+</head>
+
+<body>
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+	
+<div class = "pageheading">
+	<h2> Part 1a</h2>
+</div>
+<div id="partsNav">
+  <ul>
+    <li> <a href="hw5_1a.html"> Part 1a </a> </li>
+    <li> <a href="hw5_1b.html"> Part 1b </a> </li>
+    <li> <a href="hw5_2.html"> Part 2 </a> </li>
+    <li> <a href="hw5_3.html"> Part 3 </a> </li>
+    <li> <a href="hw5_4.html"> Part 4 </a> </li>
+  </ul>
+</div>
+<section class="content">
+  <form name ="myform" id="myform" action="mailto:jmart282@mail.ccsf.edu" method="post" enctype="text/plain">
+    <table>
+    <tr>
+    <td>Name</td>
+    <td><input type="text" name="name" id="name" size="20" class="required" autofocus></td>
+
+    </tr>
+
+    <!-- For error message to be appended correctly, must use only one parent tag (in this case <tr>)
+    and different id values for both radio and checkbox elements -->
+
+    <tr>
+
+    <td>Favorite food:</td>
+
+    <td>Pizza<input type="radio" id="rating1" name="rating" class="required" value="Pizza">
+    Hamburgers<input type="radio" id="rating2" value="Hamburgers" name="rating"></td>
+    Fried Chicken<input type="radio" id="rating3" value="Fried Chicken" name="rating"></td>
+    </tr>
+
+    <tr>
+
+    <td>Favorite sport:</td>
+
+    <td>Baseball<input type="checkbox" id="sport1" name="sport" value="Baseball" class="required">
+
+    Soccer <input type="checkbox" id="sport2" value="Soccer" name="sport">
+
+    </td>
+
+    </tr>
+
+    <tr>
+
+    <td><label for="occ" class="label">Occupation:</label></td>
+    <td>
+    <select name="occ" id="occ" class="required">
+    <option value="">-Choose one-</option>
+    <option value="student">student</option>
+    <option value="Professor">Professor</option>
+    <option value="Ventriloquist">Ventriloquist</option>
+    <option value="Hermit">Hermit</option>
+    </select>
+    </td>
+
+    </tr>
+
+    <tr>
+
+    <td><input type="submit" id="submit_button" value="SUBMIT"></td>
+
+    <td><input type="reset" value="RESET" onclick="window.location.reload();"></td>
+
+    </tr>
+
+    </table>
+
+</form>
+</table>
+</section>
+
+<footer>
+
+    <p>
+     <script type="text/javascript">
+        var dateModified = document.lastModified;
+         mydate = dateModified.slice(0,16);
+         document.write("Last updated: " + mydate);
+    </script>
+    <a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+    </a>
+
+    </p>
+</footer>
+</body>
+
+</html>

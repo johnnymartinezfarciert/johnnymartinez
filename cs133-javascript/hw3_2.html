@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<script src="hw3Script.js"></script>
+	<!-- tooltip jQuery -->
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+	<script>
+		$(function() {
+			$(document).tooltip();
+		});
+
+	</script>
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<section class="content">
+		<div id="tabs">
+			<ul>
+				<li><a href="hw3_1.html">Part 1</a></li>
+				<li><a href="hw3_2.html">Part 2</a></li>
+				<li><a href="hw3_3.html">Part 3</a></li>
+				<li><a href="hw3_4.html">Part 4</a></li>
+				<li><a href="hw3_5.html">Part 5 </a></li>
+				<li><a href="hw3_6.html">Part 6 </a></li>
+				<li><a href="hw3_ec.html">Extra Credit </a></li>
+			</ul>
+			<div>
+				<h3> Sales Person Total Sales and Comission</h3>
+				<hr>
+				<form name="salesForm">
+					<label for="name"> Salesperson's Name :</label><input id="name" title="Please make sure name is spelled correctly">
+					<table id="hw3">
+						<tr>
+							<th> Item </th>
+							<th> Price </th>
+							<th>Number Sold </th>
+							<th> Total </th>
+						</tr>
+						<tr>
+							<td> 1 </td>
+							<td> $239.99</td>
+							<td><input type="text" name="numItem1"> </td>
+							<td><input type="text" name="totalItem1">
+						</tr>
+						<tr>
+							<td> 2 </td>
+							<td>$129.75</td>
+							<td><input type="text" name="numItem2"></td>
+							<td><input type="text" name="totalItem2">
+						</tr>
+						<tr>
+							<td> 3 </td>
+							<td>$99.95</td>
+							<td><input type="text" name="numItem3"></td>
+							<td><input type="text" name="totalItem3">
+						</tr>
+						<tr>
+							<td> 4 </td>
+							<td>$350.89</td>
+							<td><input type="text" name="numItem4"></td>
+							<td><input type="text" name="totalItem4">
+						</tr>
+						<tr>
+							<td colspan="2"><input type="button" value="Submit" onclick="getTotals()"></td>
+						</tr>
+						<tr>
+							<td colspan="3"> Total Amount Sold: </td>
+							<td><input type="text" name="final_total"></td>
+						</tr>
+						<tr>
+							<td colspan="3"> Total Weekly Earnings : </td>
+							<td><input type="text" name="salary"></td>
+						</tr>
+						<tr>
+							<td colspan="2"><input type="reset" value="Reset"></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+
+		</div>
+
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

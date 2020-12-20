@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<style>
+		section {
+			margin: 0px auto;
+			font-family: monospace;
+			padding-left: 30px;
+		}
+
+	</style>
+
+
+</head>
+
+<body>
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Homework 4 </h2>
+	</div>
+
+	<section class="content">
+		<div id="tabs">
+			<ul>
+				<li><a href="hw4_1.html">Part 1</a></li>
+				<li><a href="hw4_2.html">Part 2</a></li>
+				<li><a href="hw4_3.html">Part 3</a></li>
+				<li><a href="hw4_4.html">Part 4</a></li>
+				<li><a href="hw4_5.html">Part 5 </a></li>
+				<li><a href="hw4_6.html">Part 6 </a></li>
+				<li><a href="hw4_ec.html">Extra Credit </a></li>
+			</ul>
+		</div>
+		<section>
+
+			<script type="text/javascript">
+				<!--
+				// Display a square made of asterisks for a size input by user
+
+				var sideString = 1; // User input for size of side as string
+				var sideInteger = 1; // Size of side as integer
+				var length = 1; // length counter, intialized to minimum value
+				var width = 1; // width counter, intialized to minimum value
+
+				// Prompt for size of side
+				sideString = window.prompt("Enter the size of one side of a square: (1-20)", "1");
+				// Convert user input string to int
+				sideInteger = parseInt(sideString);
+
+				// Check if user input is invalid
+				while (sideInteger < 1 || sideInteger > 20) {
+					// Alert user of the error
+					window.alert("You entered an invalid size!");
+					// Prompt for size of side
+					sideString = window.prompt("Enter the size of one side of a square: (1-20)", "1");
+					// Convert user input string to in
+					sideInteger = parseInt(sideString);
+
+				} // End while
+
+				// Loop for the length of the square
+				while (length <= sideInteger) {
+					// Create the top side of square
+					if (length == 1) {
+						// Loop for the width of the square
+						while (width <= sideInteger) {
+							// Output an asterisk for each unit of width
+							document.write("* ");
+							// Increment the width counter
+							width++;
+						} // End while
+					} // End if
+
+					// Create the left and right sides of square
+					if (length > 1 && length < sideInteger) {
+						// Loop for the width of the square
+						while (width <= sideInteger) {
+							// Create left or right side
+							if (width == 1 || width == sideInteger) {
+								// Output an asterisk
+								document.write("* ");
+							} // End if
+
+							// Create hollow space
+							else {
+								// Output two spaces
+								document.write("&nbsp;&nbsp;");
+							} // End else
+
+							// Increment the width counter
+							width++;
+						} // End while
+					} // End if
+
+					// Create the bottom side of square
+					if (length == sideInteger) {
+						// Loop for the width of the square
+						while (width <= sideInteger) {
+							// Output an asterisk for each unit of width
+							document.write("* ");
+							// Increment the width counter
+							width++;
+						} // End while
+					} // End if
+
+					// Reset the width counter to 1 before begining the next line
+					width = 1;
+					// Increment the length counter to begin the next line
+					length++;
+					// Output the next line
+					document.write("<br />");
+				} // End while
+
+				// 
+
+				-->
+			</script>
+
+
+		</section>
+
+	</section>
+
+	<footer>
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

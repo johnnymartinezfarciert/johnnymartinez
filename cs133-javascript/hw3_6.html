@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<script src="hw3Script.js"></script>
+</head>
+
+<body onload="getQuestion()">
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Homework 3 Part 6 </h2>
+	</div>
+
+	<section class="content">
+		<div id="tabs">
+			<ul>
+				<li><a href="hw3_1.html">Part 1</a></li>
+				<li><a href="hw3_2.html">Part 2</a></li>
+				<li><a href="hw3_3.html">Part 3</a></li>
+				<li><a href="hw3_4.html">Part 4</a></li>
+				<li><a href="hw3_5.html">Part 5 </a></li>
+				<li><a href="hw3_6.html">Part 6 </a></li>
+				<li><a href="hw3_ec.html">Extra Credit </a></li>
+			</ul>
+		</div>
+
+		<div>
+			<h3> Part 6 - Multiplication Excercise </h3>
+			<hr>
+			<div style="margin-left:25px; font-size:18px; font-weight:bold;">
+				<div id="results" style="margin-bottom:.5em"></div>
+
+				<form name="inputform" id="myformid" style="margin-right25px;">
+					<input type="text" name="answer" tabindex="1" size="15" style="margin-bottom:.5em" /><br />
+					<input type="button" onclick="testAnswer()" value="Your answer" />
+				</form>
+			</div>
+
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

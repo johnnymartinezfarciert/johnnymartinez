@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<HTML lang ="en">
+
+<head>
+
+<title> CNIT 133 HomeWork Homepage </title>
+
+<meta charset="utf-8">
+<link rel="Stylesheet" href="Stylesheet.css">
+<script>
+
+function countLetters() {
+  var count=0;
+  var input = document.getElementById("input").value.toLowerCase();
+  var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+  var occurences = [];
+
+  // set each element to 0 in the array of occurences
+  for(i = 0; i < alphabet.size; i++)
+  {
+    occurences[i]=0;
+  }
+  //Print heading to the results of occurrences of each letter
+  var output = document.getElementById("output");
+  output.innerHTML = " Letter " + " Occurences\n";
+
+  /*
+    For each letter of the alphabet walk through input using indedOf() as a
+    means of identifying occurences of a particular letter
+    a while loop is used and leaves the loop when return value of indexOf() is -1
+  */
+
+  var pos = 0;
+  for (var i = 0; i < alphabet.length; i ++) {
+    result = input.indexOf(alphabet[i], pos);
+    while (result != -1) {
+      count++;
+      pos = result;
+      if (pos + 1 == input.length) {
+        // preventss reading past String
+        result = -1;
+      }
+      else {
+        result = input.indexOf(alphabet[i], pos +1);
+      }
+    }
+    occurences[i] = count;
+    count = 0;
+    pos = 0;
+  }
+  // create a tabular summary of digits vs. occurrences in form of a string
+  // that will be used in the textarea output
+
+  for (var i = 0; i < alphabet.length; i++) {
+    output.innerHTML += "   " +alphabet[i] + "\t \t" + occurences[i] + "\n";
+  }
+}
+</script>
+
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+<div class = "pageheading">
+	<h2> Homework 6 - Part 4 </h2>
+</div>
+<div id="partsNav">
+  <ul>
+    <li> <a href="hw6_1.html"> Part 1 </a> </li>
+    <li> <a href="hw6_2.html"> Part 2 </a> </li>
+    <li> <a href="hw6_3.html"> Part 3 </a> </li>
+    <li> <a href="hw6_4.html"> Part 4 </a> </li>
+    <li> <a href="hw6_ec.html"> Extra Credit </a> </li>
+  </ul>
+</div>
+<section class="content">
+
+<div>
+<table>
+  <form name="myForm" id="myForm">
+    <tr><th colspan="2">Enter text into text area to count occurences of all letters </th> </tr>
+    <tr><td><textarea id="input" rows="10" cols="40">
+
+    </textarea></td></tr>
+  <tr><td>
+    <input type="button" value="Submit" onclick="countLetters()" >
+</td></tr>
+<tr><td>
+    <input type="reset" value="Reset">
+  </td></tr>
+  <tr><td rowspan="2" width="400">
+      <textarea rows="26"  id="output"></textarea>
+  </td></tr>
+  </form>
+</table>
+</div>
+
+</section>
+
+<footer>
+
+  <p>
+   <script type="text/javascript">
+      var dateModified = document.lastModified;
+       mydate = dateModified.slice(0,16);
+       document.write("Last updated: " + mydate);
+  </script>
+  <a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+  <a href="https://jigsaw.w3.org/css-validator/check/referer">
+      <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+  </a>
+
+  </p>
+</footer>
+</body>
+
+</html>

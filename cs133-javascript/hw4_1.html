@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<style>
+		#drag {
+			border-style: dotted;
+			width: 460px;
+		}
+
+	</style>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		$(function() {
+			$("#drag").draggable();
+		});
+
+	</script>
+</head>
+
+<body>
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Homework 4 </h2>
+	</div>
+
+	<section class="content">
+		<div id="tabs">
+			<ul>
+				<li><a href="hw4_1.html">Part 1</a></li>
+				<li><a href="hw4_2.html">Part 2</a></li>
+				<li><a href="hw4_3.html">Part 3</a></li>
+				<li><a href="hw4_4.html">Part 4</a></li>
+				<li><a href="hw4_5.html">Part 5 </a></li>
+				<li><a href="hw4_6.html">Part 6 </a></li>
+				<li><a href="hw4_ec.html">Extra Credit </a></li>
+			</ul>
+		</div>
+		<section>
+			<h3> Part 1 </h3>
+			<br>
+			<!--Calculate product and sum of every third
+		integer from 5 to 20 and
+		display results -->
+			<script>
+				var product, sum;
+				product = 1;
+				sum = 0;
+
+				document.writeln("5");
+				for (var i = 5; i <= 17; i += 3)
+					document.writeln(" * " + (i + 3));
+				for (var i = 5; i <= 20; i += 3) {
+					product *= i;
+				}
+				document.writeln("= ")
+				document.writeln(product + "<br>");
+
+				document.writeln("5");
+				for (var i = 5; i <= 17; i += 3)
+					document.writeln(" + " + (i + 3));
+				for (var i = 5; i <= 20; i += 3) {
+					sum += i;
+				}
+				document.writeln("= ");
+				document.writeln(sum);
+
+			</script>
+
+			<!-- use do-while or while to calculate the product and sum of every fourth
+		 integer from 3 to 31 then display results-->
+			<div id="drag">
+				<p> click to drag </p>
+				<h4> Part 1b </h4>
+				<script>
+					var i = 3;
+					var product = 1;
+					while (i <= 31) {
+						product *= i;
+						i += 4;
+					}
+					document.writeln("3");
+					for (var i = 3; i <= 27; i += 4)
+						document.writeln(" * " + (i + 4));
+					document.writeln("= ")
+					document.writeln(product + "<br>");
+
+					var x = 3;
+					var sum = 0;
+					while (x <= 31) {
+						sum += x;
+						x += 4;
+					}
+					document.writeln("3");
+					for (var i = 3; i <= 27; i += 4)
+						document.writeln(" + " + (i + 4));
+					document.writeln("= ")
+					document.writeln(sum + "<br>");
+
+				</script>
+			</div>
+
+		</section>
+
+	</section>
+
+	<footer>
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

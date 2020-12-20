@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<link rel="Stylesheet" href="prism.css">
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<section class="content">
+		<script type="text/javascript">
+			// defining the function to perform calculations
+			function process() {
+				var int1; // declaring variables
+				var int2;
+				var int3;
+				var results;
+				var avg;
+				var min;
+				var max;
+
+				int1 = document.getElementById("int1").value; // initialize the variables
+				int2 = document.getElementById("int2").value;
+				int3 = document.getElementById("int3").value;
+
+				// set results to target textarea tag
+				results = document.getElementById("results");
+
+				int1 = parseInt(int1);
+				int2 = parseInt(int2);
+				int3 = parseInt(int3);
+				avg = ((int1 + int2 + int3) / 3).toFixed(3);
+				min = Math.min(int1, int2, int3);
+				max = Math.max(int1, int2, int3);
+
+				results.value = "The sum of the entered integers: " +
+					(int1 + int2 + int3) +
+					"\nThe average of the integers: " + avg +
+					"\nThe product of the integers: " + (int1 * int2 * int3) +
+					"\nThe largest of the integers: " + max +
+					"\nThe smallest of the integers: " + min;
+			}
+
+		</script>
+
+		<div>
+			<h3> Part 2 - sum, average, product, min and max </h3>
+			<form>
+				<table>
+					<tr>
+						<td>First Integer: </td>
+						<td><input type="text" id="int1" autofocus></td>
+					</tr>
+					<tr>
+						<td>Second Integer: </td>
+						<td><input type="text" id="int2">
+						</td>
+					</tr>
+					<tr>
+						<td>Third Integer: </td>
+						<td><input type="text" id="int3">
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input type="button" onclick="process()" value="Calculate" class="btn-med">
+							<input type="reset" value="Clear" class="btn-med">
+						</td>
+
+
+					<tr>
+						<td>Results:</td>
+						<td><textarea id="results" cols="40" rows="5" readonly>
+			 </textarea> </td>
+
+				</table>
+			</form>
+		</div>
+
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 16);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>

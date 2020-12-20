@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+
+<head>
+
+	<title> CNIT 133 HomeWork Homepage </title>
+
+	<meta charset="utf-8">
+	<link rel="Stylesheet" href="Stylesheet.css">
+	<style>
+		.originalBody {
+
+			background-color: #CCCCFF;
+			font-family: Georgia;
+			color: #0000CC;
+		}
+
+		.impactFont {
+			font-family: Impact;
+
+		}
+
+		.arialFont {
+			font-family: Arial;
+		}
+
+		.warriors {
+			background-color: blue;
+			color: yellow;
+			font-family: "Times New Roman";
+			font-size: 25px;
+			;
+		}
+
+		.yellow {
+			background-color: #FFFF00;
+
+		}
+
+		.orange {
+			background-color: #FF9900;
+
+		}
+
+		.red {
+			background-color: #CC0000;
+
+		}
+
+		#body {
+			margin: 0px auto;
+			width: 75%;
+			padding: 10px;
+			border-radius: 8px;
+			border-style: groove;
+		}
+
+		.italic {
+			font-style: italic;
+		}
+
+		.normal {
+			font-style: normal;
+		}
+
+		.bold {
+			font-weight: bold;
+		}
+
+		.normal {
+			font-weight: normal;
+		}
+
+		.small {
+			font-size: 10px;
+		}
+
+		.medium {
+			font-size: 14px;
+		}
+
+		.large {
+			font-size: 18px;
+		}
+
+	</style>
+
+	<script>
+		/* Change background color using radio buttons:
+link up the results of clicking a radio button with the script function switchStyle(style) and the class name styles of warriors and yellow */
+
+		function switchStyle(style) {
+			/* if the first radio button was checked then style == 0, first element in radio button array
+			 */
+			var body = document.getElementById("body");
+			if (style == 0) {
+				body.className = "warriors";
+			} else if (style == 1) {
+				body.className = "yellow";
+			} else if (style == 2) {
+				body.className = "orange";
+			} else if (style == 3) {
+				body.className = "red";
+			}
+		}
+
+		function switchFontStyle(style) {
+			var body = document.getElementById("body");
+			if (style == 0) {
+				body.className = "italic";
+			} else if (style == 1) {
+				body.className = "normal";
+			}
+		}
+
+		function switchFontWeight(style) {
+			var body = document.getElementById("body");
+			if (style == 0) {
+				body.className = "bold";
+			} else if (style == 1) {
+				body.className = "normal";
+			}
+		}
+
+		function switchToImpact() {
+			var body = document.getElementById("body");
+			body.className = "impactFont";
+
+		}
+
+		function switchToArial() {
+			var body = document.getElementById("body");
+			body.className = "arialFont";
+
+		}
+
+		function switchToOrig() {
+			var origbody = document.getElementById("body");
+			origbody.className = "originalBody";
+
+			var origTableObject = document.getElementById("originalTable");
+			origTableObject.className = "basicTable";
+		}
+
+		/* change font size using a select drop-down menu :
+		link up the results of selecting an option with the script function selectFontSize() and the class name styles of small, medum and large
+		which will change the font size of all of the text in the table */
+		function selectFontSize() {
+			var body = document.getElementById("body");
+
+			var selectedFontSize = document.getElementById('fontSizeDropDown').value;
+
+			if (selectedFontSize == "small") {
+				body.className = "small";
+			} else if (selectedFontSize == "medium") {
+				body.className = "medium";
+			} else if (selectedFontSize == "large") {
+				body.className = "large";
+			}
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+	<div class="heading">
+		<h1> CNIT 133 </h1>
+		<h3> JavaScript</h3>
+	</div>
+
+	<nav>
+		<a href="index.html"> Home</a>
+		<a href="hw2_133.html"> Basic Ops</a>
+		<a href="hw3_133.html"> Functions</a>
+		<a href="hw4_133.html"> Loops</a>
+		<a href="hw5_133.html"> Arrays</a>
+		<a href="hw6_133.html"> Objects</a>
+		<a href="hw7_133.html"> jQuery</a>
+		<a href="hw8_133.html"> Ajax</a>
+	</nav>
+
+	<div class="pageheading">
+		<h2> Homework 7 - Part 1 </h2>
+	</div>
+	<div id="partsNav">
+		<ul>
+			<li> <a href="hw7_1.html"> Part 1 </a> </li>
+			<li> <a href="hw7_2.html"> Part 2 </a> </li>
+			<li> <a href="hw7_3.html"> Part 3 </a> </li>
+			<li> <a href="hw7_4.html"> Part 4 </a> </li>
+			<li> <a href="hw7_ec.html"> Extra Credit </a> </li>
+		</ul>
+	</div>
+	<section class="content">
+
+		<div id="body" class="originalBody">
+
+			<form name="myform">
+				<p class="main"><b>Customize the font and background:</b></p>
+				<br>
+
+
+				<!-- selecting the second option will execute the function selectFontSize()
+  and pass the second element whose value is small to the function's variable of
+  selectedFontSize, which gets is linked to the select id of fontSizeDropDown
+  Then if the selectedFontSize has the value of small then the table class of originalTable
+  is set to the style of small basicTable.
+  -->
+
+
+				<table class="basicTable" id="originalTable">
+					<tr>
+
+						<!-- clicking the first radio button will execute the function switchStyle
+  and pass the first element in the radio button array, i.e., 0 to the function -->
+
+						<th>
+							Style:
+						<th>
+					</tr>
+					<tr>
+						<td>
+							<input type="radio" name="style" onclick="switchStyle(0)">warriors
+						</td>
+
+
+						<!-- clicking the second radio button will execute the function switchStyle
+  and pass the second element in the radio button array, i.e., 1 to the function -->
+
+
+						<td>
+
+							<input type="radio" name="style" onclick="switchStyle(1)">Yellow
+						</td>
+
+						<td>
+
+							<input type="radio" name="style" onclick="switchStyle(2)">Orange
+						</td>
+
+						<td>
+
+							<input type="radio" name="style" onclick="switchStyle(3)">Red
+						</td>
+					</tr>
+
+
+					<tr>
+						<td colspan="2">
+							Choose font style:<br>
+							<input type="radio" name="fstyle" onclick="switchFontStyle(0)">Italic
+							<input type="radio" name="fstyle" onclick="switchFontStyle(1)">Normal
+						</td>
+
+						<td colspan="2">
+							Choose font weight: <br>
+							<input type="radio" name="fweight" onclick="switchFontWeight(0)">Bold
+							<input type="radio" name="fweight" onclick="switchFontWeight(1)">Normal
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="2">
+
+							<!-- selecting the second option will execute the function selectFontSize()
+  and pass the second element whose value is small to the function's variable of
+  selectedFontSize, which is linked to the select id of fontSizeDropDown
+  Then if the selectedFontSize has the value of small then the table class of originalTable
+  is set to the style of small basicTable.
+  -->
+
+
+							Select font size: <br>
+							<select name="fontSizeDropDown" id="fontSizeDropDown" onchange="selectFontSize()">
+
+								<option value="#">--Select font size--</option>
+								<option value="small">Small</option>
+								<option value="medium">Medium</option>
+								<option value="large">Large</option>
+							</select>
+						</td>
+						<td colspan="2">
+							<input type="button" value="Change to Impact font" onclick="switchToImpact()">
+						</td>
+
+					<tr>
+						<td colspan="2"></td>
+						<td colspan="2">
+							<input type="button" value="Change to Arial font" onclick="switchToArial()">
+						</td>
+					</tr>
+					</tr>
+
+
+				</table>
+			</form>
+
+			<br>
+			<input type="button" value="Revert to original" onclick="switchToOrig()">
+
+		</div>
+
+	</section>
+
+	<footer>
+
+		<p>
+			<script type="text/javascript">
+				var dateModified = document.lastModified;
+				mydate = dateModified.slice(0, 17);
+				document.write("Last updated: " + mydate);
+
+			</script>
+			<a href="https://validator.w3.org/check?uri=referer"><img style="border:0;width:33px;height:35px" src="html5a.png" alt="HTML5"></a>
+
+
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+			</a>
+
+		</p>
+	</footer>
+</body>
+
+</html>
