@@ -32,7 +32,6 @@
 			text-indent: 10px;
 			line-height: 28px;
 		}
-
 	</style>
 	<!-- <script src="http://code.jquery.com/jquery-1.7.1.js"></script>
 <script>
@@ -54,11 +53,11 @@ $(document).ready(function(){ // built in query function
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 	<script>
-		$(document).ready(function() {
+		$(document).ready(function () {
 			$('.answer').hide();
 
 			// Attach a click handler to the h2 elements.
-			$(".main h2").click(function() {
+			$(".main h2").click(function () {
 				// Save the h2 element that was clicked
 				// as well as the following answer element.
 				var h2 = $(this);
@@ -68,25 +67,24 @@ $(document).ready(function(){ // built in query function
 					// If the answer is currently not displayed,
 					// display it with a sliding down motion,
 					// and when done, add the "close" class to the h2 element.
-					answer.slideDown(function() {
+					answer.slideDown(function () {
 						h2.addClass("close");
 					});
 				} else {
 					// Otherwise, fade the answer out, and when done,
 					// remove the "close" class from the h2 element.
-					answer.fadeOut(function() {
+					answer.fadeOut(function () {
 						h2.removeClass("close");
 					});
 				}
 			});
 		}); // end ready
-
 	</script>
 </head>
 
 <body>
 
-	<div class="heading">
+	<div class="header">
 		<h1> CNIT 133 </h1>
 		<h3> JavaScript</h3>
 	</div>
@@ -102,29 +100,47 @@ $(document).ready(function(){ // built in query function
 		<a href="hw8_133.html"> Ajax</a>
 	</nav>
 
-	<div class="pageheading">
-		<h1> Homework 7 </h1>
-	</div>
 
 	<section class="content">
-
+		<h3 id="center">jQuery </h3>
+		<hr>
 		<div class="main">
 			<h2> Part 1</h2>
 			<div class="answer">
-				<p> <a href="hw7_1.html">Link to part 1 </a><br>Create a webpage in which users are allowed to select a page layout and formatting through the use of the className property. Choose at least three form elements from among radio buttons, select items, checkboxes, and buttons to allow the user to change the background color, font size, font family, font style, and font weight. You may use JavaScript or jQuery for this. </p>
+				<p> <a href="hw7_1.html">Link to part 1 </a><br>Create a webpage in which users are allowed to select a
+					page layout and formatting through the use of the className property. Choose at least three form
+					elements from among radio buttons, select items, checkboxes, and buttons to allow the user to change
+					the background color, font size, font family, font style, and font weight. You may use JavaScript or
+					jQuery for this. </p>
 			</div>
 
 			<h2> Part 2</h2>
 			<div class="answer">
 				<p><a href="hw7_2.html"> Link to part 2 </a><br>
-					Create a page that has a header of Password Protection Page, a form password element, and submit and reset buttons. Use jQuery version 1.7.1 or jQuery version 1.11.0 or google's jQuery version to allow the user to click on a login button which will bring up the password prompt. You should use an input type="password", which will display asterisks when the user enters the password. I suggest that you name your password as obama. If the password entered is incorrect then display "password is incorrect" and remain on the page. You may use javascript (insecure) or a php file (secure) to do this part. If the password is correct then allow entrance to a second page that contains a script that contains three hotspot labels, "Stop", "Caution", and "Go". When the user mouses over the "Stop" hotspot, the background color of the browser window should turn red. When the user mouses over the "Caution" hotspot, the background color should turn yellow. When the user mouses over the "Go" hotspot, the background color should turn green. When the user mouses off of any of these hotspots, return the background color to the original color of the browser window.
+					Create a page that has a header of Password Protection Page, a form password element, and submit and
+					reset buttons. Use jQuery version 1.7.1 or jQuery version 1.11.0 or google's jQuery version to allow
+					the user to click on a login button which will bring up the password prompt. You should use an input
+					type="password", which will display asterisks when the user enters the password. I suggest that you
+					name your password as obama. If the password entered is incorrect then display "password is
+					incorrect" and remain on the page. You may use javascript (insecure) or a php file (secure) to do
+					this part. If the password is correct then allow entrance to a second page that contains a script
+					that contains three hotspot labels, "Stop", "Caution", and "Go". When the user mouses over the
+					"Stop" hotspot, the background color of the browser window should turn red. When the user mouses
+					over the "Caution" hotspot, the background color should turn yellow. When the user mouses over the
+					"Go" hotspot, the background color should turn green. When the user mouses off of any of these
+					hotspots, return the background color to the original color of the browser window.
 				</p>
 			</div>
 
 			<h2> Part 3</h2>
 			<div class="answer">
 				<p> <a href="hw7_3.html"> Link to part 3 </a> <br>
-					Write a script that displays a top navigation bar containing a link to your Homework 1 and five other links that will be to the cover page for each of your Homework2 - Homework6. When you mouseover any of these other links then display a drop-down menu that contains the links of their homework parts (part 1 - 4 or part 1 - 6). If applicable then also include links to any extra credit pages that you have done. Make sure that all links are working. You can use strictly JavaScript or else jQuery.
+					Write a script that displays a top navigation bar containing a link to your Homework 1 and five
+					other links that will be to the cover page for each of your Homework2 - Homework6. When you
+					mouseover any of these other links then display a drop-down menu that contains the links of their
+					homework parts (part 1 - 4 or part 1 - 6). If applicable then also include links to any extra credit
+					pages that you have done. Make sure that all links are working. You can use strictly JavaScript or
+					else jQuery.
 				</p>
 			</div>
 
@@ -138,7 +154,14 @@ $(document).ready(function(){ // built in query function
 			<h2> Extra Credit</h2>
 			<div class="answer">
 				<p> <a href="hw7_ec.html"> Link to extra credit </a> <br>
-					Write a Web page that enables the user to play the game of 15. There is a 4-by-4 board (implemented as a table) for a total of 16 slots. One of the slots is empty. The other slots are occupied by 15 tiles, randomly numbered from 1 through 15. Any tile next to the currently empty slot can be moved into the currently empty slot by clicking on the tile. Your program should create the board with the tiles out of order. The user's goal is to arrange the tiles in sequential order row by row. Using the Document Object Model and the onclick event, write a script that allows the user to swap the positions of the open position and an adjacent tile. [Hint: The onclick event should be specified for each table cell.]
+					Write a Web page that enables the user to play the game of 15. There is a 4-by-4 board (implemented
+					as a table) for a total of 16 slots. One of the slots is empty. The other slots are occupied by 15
+					tiles, randomly numbered from 1 through 15. Any tile next to the currently empty slot can be moved
+					into the currently empty slot by clicking on the tile. Your program should create the board with the
+					tiles out of order. The user's goal is to arrange the tiles in sequential order row by row. Using
+					the Document Object Model and the onclick event, write a script that allows the user to swap the
+					positions of the open position and an adjacent tile. [Hint: The onclick event should be specified
+					for each table cell.]
 				</p>
 			</div>
 		</div>
